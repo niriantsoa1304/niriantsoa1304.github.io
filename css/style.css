@@ -22,6 +22,7 @@
   --footer-text: var(--gray-soft);
   --star-color: rgba(193, 61, 118, 0.8);
   --shadow-rgb: 61, 34, 51;
+  --contact-gradient: linear-gradient(120deg, #fbdcee 0%, #f2ddf7 55%, #e9d8f7 100%);
   --radius-lg: 28px;
   --radius-md: 18px;
   --radius-pill: 999px;
@@ -50,6 +51,7 @@
   --footer-text: #a98a99;
   --star-color: rgba(255, 255, 255, 0.9);
   --shadow-rgb: 0, 0, 0;
+  --contact-gradient: linear-gradient(120deg, #3c2740 0%, #2f2044 55%, #251a38 100%);
 }
 
 body,
@@ -586,19 +588,83 @@ h1, h2, h3, h4 {
 /* ---------- Toolkit ---------- */
 .toolkit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+.toolkit-col {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.9rem 2rem;
+  box-shadow: 0 16px 32px -22px rgba(var(--shadow-rgb), 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.toolkit-col:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 36px -18px rgba(var(--shadow-rgb), 0.35);
 }
 .toolkit-col h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
   font-family: var(--font-head);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--gray-soft);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.25rem;
 }
+.toolkit-icon { font-size: 1.1rem; }
+
+/* ---------- Languages ---------- */
+.language-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.language-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 12px 24px -20px rgba(var(--shadow-rgb), 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.language-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px -16px rgba(var(--shadow-rgb), 0.3);
+}
+.language-name {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.language-level {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--pink-mid);
+  margin-top: 0.15rem;
+}
+.lang-dots { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.lang-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--pill-border);
+}
+.lang-dot.is-filled { background: var(--pink-accent); }
+
 .pill-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.toolkit-col .pill { background: var(--bg); }
 .pill {
   background: var(--white);
   border: 1.5px solid var(--pill-border);
@@ -662,19 +728,11 @@ h1, h2, h3, h4 {
 .plain-list li span { color: var(--gray-soft); font-family: var(--font-body); font-weight: 500; font-size: 0.92rem; white-space: nowrap; }
 
 /* ---------- Contact ---------- */
-/* This card keeps its pastel gradient in both themes, so its own text/link/
-   button colors are pinned to the light-mode values here rather than the
-   theme-switching root variables — otherwise dark mode's near-white --ink
-   and pale --pink-deep become unreadable against the still-light card. */
 .contact-card {
-  --ink: #3d2233;
-  --gray: #6b4a5a;
-  --pink-deep: #c13d76;
-  --white: #ffffff;
-  --pill-border: #f6c9dc;
-  background: linear-gradient(120deg, #fbdcee 0%, #f2ddf7 55%, #e9d8f7 100%);
+  background: var(--contact-gradient);
   border-radius: var(--radius-lg);
   padding: clamp(2.5rem, 6vw, 4rem);
+  transition: background 0.25s ease;
 }
 .contact-card h2 {
   font-size: clamp(1.6rem, 4vw, 2.3rem);
