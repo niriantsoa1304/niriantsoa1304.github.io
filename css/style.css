@@ -151,6 +151,17 @@ h1, h2, h3, h4 {
   color: var(--pink-mid);
   margin-bottom: 1.25rem;
 }
+/* Sub-group heading inside a section that's split into multiple
+   categories (e.g. Research / Projects / Volunteering) */
+.group-label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+}
 
 .section {
   padding-block: clamp(3.5rem, 8vw, 6rem);
@@ -213,6 +224,9 @@ h1, h2, h3, h4 {
   font-size: clamp(0.95rem, 2.4vw, 1.15rem);
   color: var(--pink-deep);
   white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .main-nav { display: flex; gap: 2.25rem; }
 .main-nav a {
@@ -456,8 +470,8 @@ h1, h2, h3, h4 {
 .info-badge {
   background: var(--white);
   border-radius: var(--radius-md);
-  padding: 0.9rem 1.3rem;
-  min-width: 260px;
+  padding: 1.1rem 1.6rem;
+  min-width: 300px;
   box-shadow: 0 12px 24px -18px rgba(var(--shadow-rgb), 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -480,15 +494,22 @@ h1, h2, h3, h4 {
 /* ---------- Work ---------- */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+  gap: 1.75rem;
 }
 .work-card {
   background: var(--white);
   border-radius: var(--radius-lg);
-  padding: 1.9rem;
+  padding: 2.1rem;
+  max-width: 560px;
+  margin-inline: auto;
   box-shadow: 0 16px 32px -22px rgba(var(--shadow-rgb), 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* A card standing alone in its row (nothing to share space with) gets to
+   be bigger instead of staying capped at the shared multi-card size */
+.work-card:only-child {
+  max-width: 900px;
 }
 .work-card:hover {
   transform: translateY(-4px);
@@ -507,7 +528,7 @@ h1, h2, h3, h4 {
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: clamp(2rem, 5vw, 3rem);
-  max-width: 640px;
+  max-width: 720px;
   margin-inline: auto;
   box-shadow: 0 16px 32px -22px rgba(var(--shadow-rgb), 0.3);
 }
@@ -556,7 +577,7 @@ h1, h2, h3, h4 {
   padding: 0.32rem 0.85rem;
   border-radius: var(--radius-pill);
 }
-.work-card h3 { font-size: 1.3rem; margin-bottom: 0.7rem; }
+.work-card h3, .work-card h4 { font-size: 1.3rem; margin-bottom: 0.7rem; }
 .work-card p { color: var(--gray); font-size: 0.96rem; margin-bottom: 1.4rem; }
 .card-link { color: var(--pink-deep); font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; }
 .card-link:hover,
