@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe3ef"/>
+      <stop offset="100%" stop-color="#f6e9ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="225" fill="url(#g)"/>
+  <text x="50%" y="52%" font-family="'Segoe UI Emoji','Noto Color Emoji',sans-serif" font-size="60" text-anchor="middle" dominant-baseline="middle">🧠</text>
+  <text x="50%" y="86%" font-family="sans-serif" font-size="13" letter-spacing="1" fill="#c13d76" text-anchor="middle" font-weight="700">REPLACE WITH IMAGE</text>
+</svg>
