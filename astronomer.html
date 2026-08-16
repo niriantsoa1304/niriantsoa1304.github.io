@@ -45,16 +45,18 @@
     <a href="index.html" class="logo">Niriantsoa Raherinaina</a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="#about">About</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#research">Research</a>
-      <a href="#path">Path</a>
+      <a href="#about" data-fr="À propos">About</a>
+      <a href="#toolkit" data-fr="Compétences">Toolkit</a>
+      <a href="#research" data-fr="Recherche">Research</a>
+      <a href="#path" data-fr="Parcours">Path</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
       <span class="icon-light" aria-hidden="true">☾</span><span class="icon-dark" aria-hidden="true">☀</span>
     </button>
+
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Passer en français">FR</button>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
@@ -67,18 +69,23 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-blob" aria-hidden="true"></div>
-    <div class="container hero-grid">
+    <div class="container hero-grid hero-split">
       <div class="hero-content">
-        <span class="eyebrow">✧ Astronomy &amp; Astrophysics</span>
-        <h1>Mapping signals<br><span class="accent">from the radio sky.</span></h1>
-        <p class="hero-text">
+        <span class="eyebrow" data-fr="✧ Astronomie &amp; Astrophysique">✧ Astronomy &amp; Astrophysics</span>
+        <h1 data-fr='Cartographier les signaux<br><span class="accent">du ciel radio.</span>'>Mapping signals<br><span class="accent">from the radio sky.</span></h1>
+        <p class="hero-text" data-fr="Je suis Niriantsoa — étudiante en master, à la croisée de l&rsquo;astronomie, des données et du code. Basée à Antananarivo, Madagascar, je partage mon temps entre astronomie observationnelle, calcul scientifique, et l&rsquo;art de rendre les signaux bruts lisibles.">
           I'm Niriantsoa — an M.Sc. student working at the intersection of astronomy, data
           and code. Based in Antananarivo, Madagascar, I spend my time on observational
           astronomy, scientific computing, and turning raw signals into something legible.
         </p>
         <div class="hero-actions">
-          <a href="#toolkit" class="btn btn-primary">See my toolkit</a>
-          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+          <a href="#toolkit" class="btn btn-primary" data-fr="Voir mes compétences">See my toolkit</a>
+          <a href="#contact" class="btn btn-secondary" data-fr="Me contacter">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="assets/placeholder-action-astronomer.png" alt="">
         </div>
       </div>
     </div>
@@ -95,8 +102,8 @@
       </div>
 
       <div class="about-content">
-        <h2 class="section-label">About</h2>
-        <p class="about-text">
+        <h2 class="section-label" data-fr="À propos">About</h2>
+        <p class="about-text" data-fr="Je suis étudiante en master d&rsquo;Astronomie et d&rsquo;Astrophysique à l&rsquo;Université d&rsquo;Antananarivo, actuellement formée à la radioastronomie et à la réduction de données VLBI via le programme DARA. Mon travail se situe entre astronomie observationnelle et calcul scientifique — j&rsquo;aime rendre des jeux de données confus limpides. En dehors des cours, je développe de petits outils Python et j&rsquo;explore comment l&rsquo;apprentissage automatique pourrait aider à traiter les données de radioastronomie, notamment celles de MeerKAT.">
           I'm a Master's student in Astronomy and Astrophysics at the University of
           Antananarivo, currently training in radio astronomy and VLBI data reduction
           through the DARA programme. My work sits between observational astronomy and
@@ -107,15 +114,15 @@
 
         <div class="badge-row">
           <div class="info-badge">
-            <span class="info-badge-label">Based in</span>
+            <span class="info-badge-label" data-fr="Basée à">Based in</span>
             <span class="info-badge-value">Antananarivo, Madagascar</span>
           </div>
           <div class="info-badge">
-            <span class="info-badge-label">Focus</span>
-            <span class="info-badge-value">Radio astronomy &amp; scientific computing</span>
+            <span class="info-badge-label" data-fr="Spécialité">Focus</span>
+            <span class="info-badge-value" data-fr="Radioastronomie et calcul scientifique">Radio astronomy &amp; scientific computing</span>
           </div>
           <div class="info-badge">
-            <span class="info-badge-label">Currently</span>
+            <span class="info-badge-label" data-fr="Actuellement">Currently</span>
             <span class="info-badge-value">DARA Basic Training, 2025–2026</span>
           </div>
         </div>
@@ -126,27 +133,27 @@
   <!-- TOOLKIT -->
   <section id="toolkit" class="section">
     <div class="container">
-      <h2 class="section-label">Toolkit</h2>
+      <h2 class="section-label" data-fr="Compétences">Toolkit</h2>
 
       <div class="toolkit-grid">
         <div class="toolkit-col">
-          <h4>Astronomy</h4>
+          <h4 data-fr="Astronomie">Astronomy</h4>
           <div class="pill-row">
             <span class="pill">CASA</span>
             <span class="pill">SAOImage DS9</span>
             <span class="pill">Astrometrica</span>
-            <span class="pill">Radio Interferometry</span>
+            <span class="pill" data-fr="Interférométrie radio">Radio Interferometry</span>
             <span class="pill">VLBI</span>
-            <span class="pill">FITS Data Analysis</span>
+            <span class="pill" data-fr="Analyse de données FITS">FITS Data Analysis</span>
           </div>
         </div>
 
         <div class="toolkit-col">
-          <h4>Data Analysis</h4>
+          <h4 data-fr="Analyse de données">Data Analysis</h4>
           <div class="pill-row">
-            <span class="pill">Scientific Computing</span>
-            <span class="pill">Data Visualization</span>
-            <span class="pill">Data Pre-processing</span>
+            <span class="pill" data-fr="Calcul scientifique">Scientific Computing</span>
+            <span class="pill" data-fr="Visualisation de données">Data Visualization</span>
+            <span class="pill" data-fr="Prétraitement des données">Data Pre-processing</span>
           </div>
         </div>
       </div>
@@ -156,7 +163,7 @@
   <!-- RESEARCH PROJECTS -->
   <section id="research" class="section">
     <div class="container">
-      <h2 class="section-label">Research &amp; projects</h2>
+      <h2 class="section-label" data-fr="Recherche et projets">Research &amp; projects</h2>
 
       <div class="work-grid">
         <article class="work-card">
@@ -166,32 +173,32 @@
             <span class="tag">CASA</span>
             <span class="tag">Python</span>
           </div>
-          <h3>VLBI Data Reduction Pipeline</h3>
-          <p>[Summarize the VLBI data reduction work done as part of the DARA programme — what data, what pipeline steps, what you found.]</p>
-          <a href="#" class="card-link">[Add link to writeup or repository →]</a>
+          <h3 data-fr="Pipeline de réduction de données VLBI">VLBI Data Reduction Pipeline</h3>
+          <p data-fr="[Résumez le travail de réduction de données VLBI réalisé dans le cadre du programme DARA — quelles données, quelles étapes, quels résultats.]">[Summarize the VLBI data reduction work done as part of the DARA programme — what data, what pipeline steps, what you found.]</p>
+          <a href="#" class="card-link" data-fr="[Ajouter un lien vers l&rsquo;article ou le dépôt →]">[Add link to writeup or repository →]</a>
         </article>
 
         <article class="work-card">
           <img class="card-thumb" src="assets/placeholder-research-meerkat.svg" alt="">
           <div class="tag-row">
-            <span class="tag">Machine Learning</span>
+            <span class="tag" data-fr="Apprentissage automatique">Machine Learning</span>
             <span class="tag">MeerKAT</span>
             <span class="tag">Python</span>
           </div>
-          <h3>ML for Radio Astronomy Data</h3>
-          <p>[Describe the machine learning exploration on MeerKAT / radio astronomy data mentioned in your bio — goal, approach, current status.]</p>
-          <a href="#" class="card-link">[Add link to writeup or repository →]</a>
+          <h3 data-fr="Apprentissage automatique en radioastronomie">ML for Radio Astronomy Data</h3>
+          <p data-fr="[Décrivez l&rsquo;exploration en apprentissage automatique sur les données MeerKAT / radioastronomie mentionnée dans votre bio — objectif, approche, état d&rsquo;avancement.]">[Describe the machine learning exploration on MeerKAT / radio astronomy data mentioned in your bio — goal, approach, current status.]</p>
+          <a href="#" class="card-link" data-fr="[Ajouter un lien vers l&rsquo;article ou le dépôt →]">[Add link to writeup or repository →]</a>
         </article>
 
         <article class="work-card">
           <img class="card-thumb" src="assets/placeholder-research-thesis.svg" alt="">
           <div class="tag-row">
-            <span class="tag">[Add tag]</span>
-            <span class="tag">[Add tag]</span>
+            <span class="tag" data-fr="[Ajouter un tag]">[Add tag]</span>
+            <span class="tag" data-fr="[Ajouter un tag]">[Add tag]</span>
           </div>
-          <h3>[Add your M.Sc. thesis title]</h3>
-          <p>[Summarize your Master's research project — question, method, and where it stands.]</p>
-          <a href="#" class="card-link">[Add link →]</a>
+          <h3 data-fr="[Ajoutez le titre de votre mémoire]">[Add your M.Sc. thesis title]</h3>
+          <p data-fr="[Résumez votre projet de recherche de master — question, méthode, et état d&rsquo;avancement.]">[Summarize your Master's research project — question, method, and where it stands.]</p>
+          <a href="#" class="card-link" data-fr="[Ajouter un lien →]">[Add link →]</a>
         </article>
       </div>
     </div>
@@ -200,30 +207,30 @@
   <!-- PATH -->
   <section id="path" class="section">
     <div class="container">
-      <h2 class="section-label">Path</h2>
+      <h2 class="section-label" data-fr="Parcours">Path</h2>
 
       <div class="timeline">
         <div class="timeline-item">
-          <span class="timeline-date">Ongoing</span>
+          <span class="timeline-date" data-fr="En cours">Ongoing</span>
           <div class="timeline-body">
-            <h4>Master 2 (M.Sc) in Astronomy &amp; Astrophysics</h4>
-            <p>University of Antananarivo — coursework in Galaxies, Cosmology, Python Programming, Linux.</p>
+            <h4 data-fr="Master 2 en Astronomie &amp; Astrophysique">Master 2 (M.Sc) in Astronomy &amp; Astrophysics</h4>
+            <p data-fr="Université d&rsquo;Antananarivo — cours de Galaxies, Cosmologie, Programmation Python, Linux.">University of Antananarivo — coursework in Galaxies, Cosmology, Python Programming, Linux.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-date">2025–2026</span>
           <div class="timeline-body">
-            <h4>DARA Basic Training Programme</h4>
-            <p>Development in Africa with Radio Astronomy — Linux and Python for scientific computing, optical and radio astronomy, VLBI data reduction.</p>
+            <h4 data-fr="Programme de formation de base DARA">DARA Basic Training Programme</h4>
+            <p data-fr="Development in Africa with Radio Astronomy — Linux et Python pour le calcul scientifique, astronomie optique et radio, réduction de données VLBI.">Development in Africa with Radio Astronomy — Linux and Python for scientific computing, optical and radio astronomy, VLBI data reduction.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-date">2021–2024</span>
           <div class="timeline-body">
-            <h4>B.Sc in Physics &amp; Chemistry Education</h4>
-            <p>École Normale Supérieure (ENS), Antananarivo — graduated with honours (14/20).</p>
+            <h4 data-fr="Licence en Enseignement de la Physique-Chimie">B.Sc in Physics &amp; Chemistry Education</h4>
+            <p data-fr="École Normale Supérieure (ENS), Antananarivo — diplômée avec mention (14/20).">École Normale Supérieure (ENS), Antananarivo — graduated with honours (14/20).</p>
           </div>
         </div>
       </div>
@@ -234,21 +241,21 @@
   <section class="section">
     <div class="container extra-grid">
       <div>
-        <h2 class="section-label">Currently exploring</h2>
+        <h2 class="section-label" data-fr="En ce moment, j&rsquo;explore">Currently exploring</h2>
         <div class="pill-row">
-          <span class="pill pill-soft">Radio Astronomy</span>
-          <span class="pill pill-soft">Machine Learning</span>
-          <span class="pill pill-soft">Artificial Intelligence</span>
-          <span class="pill pill-soft">Scientific Computing</span>
-          <span class="pill pill-soft">Signal Processing</span>
-          <span class="pill pill-soft">Astronomical Data Analysis</span>
+          <span class="pill pill-soft" data-fr="Radioastronomie">Radio Astronomy</span>
+          <span class="pill pill-soft" data-fr="Apprentissage automatique">Machine Learning</span>
+          <span class="pill pill-soft" data-fr="Intelligence artificielle">Artificial Intelligence</span>
+          <span class="pill pill-soft" data-fr="Calcul scientifique">Scientific Computing</span>
+          <span class="pill pill-soft" data-fr="Traitement du signal">Signal Processing</span>
+          <span class="pill pill-soft" data-fr="Analyse de données astronomiques">Astronomical Data Analysis</span>
         </div>
       </div>
 
       <div>
-        <h2 class="section-label">Talks &amp; Travel</h2>
+        <h2 class="section-label" data-fr="Conférences et déplacements">Talks &amp; Travel</h2>
         <ul class="plain-list">
-          <li><strong>DARA Annual Network Meeting</strong><span>South Africa, 2026</span></li>
+          <li><strong>DARA Annual Network Meeting</strong><span data-fr="Afrique du Sud, 2026">South Africa, 2026</span></li>
           <li><strong>TART Conference</strong><span>Madagascar, 2026</span></li>
         </ul>
       </div>
@@ -259,15 +266,15 @@
   <section id="contact" class="section">
     <div class="container">
       <div class="contact-card">
-        <span class="section-label">Say hello</span>
-        <h2>Always glad to talk radio<br>astronomy, data — or anything in between.</h2>
-        <p>The fastest way to reach me is by email.</p>
+        <span class="section-label" data-fr="Dites bonjour">Say hello</span>
+        <h2 data-fr="Toujours ravie de parler radioastronomie,<br>données — ou tout ce qui les relie.">Always glad to talk radio<br>astronomy, data — or anything in between.</h2>
+        <p data-fr="Le plus simple pour me joindre reste l&rsquo;email.">The fastest way to reach me is by email.</p>
         <div class="hero-actions">
           <a href="mailto:niriantsoa1304@gmail.com" class="btn btn-primary">niriantsoa1304@gmail.com</a>
           <a href="https://github.com/niriantsoa1304" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View GitHub profile">GitHub</a>
           <a href="https://www.linkedin.com/in/REPLACE_WITH_YOUR_HANDLE" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View LinkedIn profile">LinkedIn</a>
         </div>
-        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener">Download my CV →</a></p>
+        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener" data-fr="Télécharger mon CV →">Download my CV →</a></p>
       </div>
     </div>
   </section>

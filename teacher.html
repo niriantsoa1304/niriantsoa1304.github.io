@@ -45,16 +45,18 @@
     <a href="index.html" class="logo">Niriantsoa Raherinaina</a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="#about">About</a>
-      <a href="#path">Experience</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#languages">Languages</a>
+      <a href="#about" data-fr="À propos">About</a>
+      <a href="#path" data-fr="Expérience">Experience</a>
+      <a href="#reviews" data-fr="Avis">Reviews</a>
+      <a href="#languages" data-fr="Langues">Languages</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
       <span class="icon-light" aria-hidden="true">☾</span><span class="icon-dark" aria-hidden="true">☀</span>
     </button>
+
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Passer en français">FR</button>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
@@ -67,17 +69,22 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-blob" aria-hidden="true"></div>
-    <div class="container hero-grid">
+    <div class="container hero-grid hero-split">
       <div class="hero-content">
-        <span class="eyebrow">✧ Physics &amp; Chemistry</span>
-        <h1>Teaching physics<br><span class="accent">one curious question at a time.</span></h1>
-        <p class="hero-text">
+        <span class="eyebrow" data-fr="✧ Physique &amp; Chimie">✧ Physics &amp; Chemistry</span>
+        <h1 data-fr='Enseigner la physique,<br><span class="accent">une question curieuse à la fois.</span>'>Teaching physics<br><span class="accent">one curious question at a time.</span></h1>
+        <p class="hero-text" data-fr="Je suis Niriantsoa — professeure de physique-chimie pour les niveaux Grade 11–12 / Seconde–Terminale, dans les systèmes anglophone et francophone. Actuellement disponible pour des cours particuliers.">
           I'm Niriantsoa — a physics and chemistry teacher for Grade 11–12 / Seconde–Terminale,
           in both English and French systems. Currently available for private tutoring.
         </p>
         <div class="hero-actions">
-          <a href="#path" class="btn btn-primary">My experience</a>
-          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+          <a href="#path" class="btn btn-primary" data-fr="Mon expérience">My experience</a>
+          <a href="#contact" class="btn btn-secondary" data-fr="Me contacter">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="assets/placeholder-action-teacher.png" alt="">
         </div>
       </div>
     </div>
@@ -94,8 +101,8 @@
       </div>
 
       <div class="about-content">
-        <h2 class="section-label">About</h2>
-        <p class="about-text">
+        <h2 class="section-label" data-fr="À propos">About</h2>
+        <p class="about-text" data-fr="J&rsquo;enseigne la physique-chimie à des lycéens, en alternant entre les systèmes anglophone et francophone. J&rsquo;ai enseigné en Grade 11 et 12 à la Vision Valley School, et j&rsquo;enseigne actuellement en Seconde, Première et Terminale au Lycée Privée Emeraude, en français. En parallèle de mon master, je suis aussi disponible pour des cours particuliers.">
           I teach physics and chemistry to high-school-level students, moving between the
           English and French systems. I taught Grade 11 and 12 at Vision Valley School, and
           I'm currently teaching Seconde, Première, and Terminale at Lycée Privée Emeraude,
@@ -104,16 +111,16 @@
 
         <div class="badge-row">
           <div class="info-badge">
-            <span class="info-badge-label">Subjects</span>
-            <span class="info-badge-value">Physics &amp; Chemistry</span>
+            <span class="info-badge-label" data-fr="Matières">Subjects</span>
+            <span class="info-badge-value" data-fr="Physique &amp; Chimie">Physics &amp; Chemistry</span>
           </div>
           <div class="info-badge">
-            <span class="info-badge-label">Systems</span>
-            <span class="info-badge-value">French &amp; English curricula</span>
+            <span class="info-badge-label" data-fr="Systèmes">Systems</span>
+            <span class="info-badge-value" data-fr="Cursus francophone et anglophone">French &amp; English curricula</span>
           </div>
           <div class="info-badge">
-            <span class="info-badge-label">Available for</span>
-            <span class="info-badge-value">Private tutoring</span>
+            <span class="info-badge-label" data-fr="Disponible pour">Available for</span>
+            <span class="info-badge-value" data-fr="Cours particuliers">Private tutoring</span>
           </div>
         </div>
       </div>
@@ -123,45 +130,48 @@
   <!-- EXPERIENCE -->
   <section id="path" class="section">
     <div class="container">
-      <h2 class="section-label">Experience</h2>
+      <h2 class="section-label" data-fr="Expérience">Experience</h2>
 
       <div class="timeline">
         <div class="timeline-item">
-          <span class="timeline-date">Ongoing</span>
+          <span class="timeline-date" data-fr="En cours">Ongoing</span>
           <div class="timeline-body">
-            <h4>Physics &amp; Chemistry Teacher — Lycée Privée Emeraude</h4>
-            <p>French system — Seconde, Première, and Terminale, taught in French.</p>
+            <h4 data-fr="Professeure de Physique-Chimie — Lycée Privée Emeraude">Physics &amp; Chemistry Teacher — Lycée Privée Emeraude</h4>
+            <p data-fr="Système francophone — Seconde, Première et Terminale, enseigné en français.">French system — Seconde, Première, and Terminale, taught in French.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-date">2024–2025</span>
           <div class="timeline-body">
-            <h4>Physics &amp; Chemistry Teacher — Vision Valley School</h4>
-            <p>English system — Grade 11 and Grade 12, taught in English.</p>
+            <h4 data-fr="Professeure de Physique-Chimie — Vision Valley School">Physics &amp; Chemistry Teacher — Vision Valley School</h4>
+            <p data-fr="Système anglophone — Grade 11 et Grade 12, enseigné en anglais.">English system — Grade 11 and Grade 12, taught in English.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="section">
+  <!-- RATE MY WORK -->
+  <section id="reviews" class="section">
     <div class="container">
-      <h2 class="section-label">What students &amp; parents say</h2>
+      <h2 class="section-label" data-fr="Donnez votre avis">Rate my teaching</h2>
 
-      <div class="work-grid">
-        <div class="work-card">
-          <img class="testimonial-avatar" src="assets/placeholder-avatar-1.svg" alt="">
-          <p>“[Add a testimonial from a student or parent — what did they say about your teaching?]”</p>
-          <span class="card-link">— [Name, Grade / Role]</span>
+      <div class="review-card">
+        <p class="review-intro" data-fr="Je constitue encore mes avis d&rsquo;élèves et de parents. Si nous avons travaillé ensemble, une note rapide me ferait très plaisir — ou simplement un petit bonjour.">I'm still building up reviews from students and parents. If we've worked together, I'd really appreciate a quick rating — or just say hello.</p>
+
+        <div class="star-rating" id="star-rating" role="group" aria-label="Rate out of 5 stars">
+          <button type="button" class="rate-star" data-value="1" aria-label="1 star">★</button>
+          <button type="button" class="rate-star" data-value="2" aria-label="2 stars">★</button>
+          <button type="button" class="rate-star" data-value="3" aria-label="3 stars">★</button>
+          <button type="button" class="rate-star" data-value="4" aria-label="4 stars">★</button>
+          <button type="button" class="rate-star" data-value="5" aria-label="5 stars">★</button>
         </div>
 
-        <div class="work-card">
-          <img class="testimonial-avatar" src="assets/placeholder-avatar-2.svg" alt="">
-          <p>“[Add a second testimonial here.]”</p>
-          <span class="card-link">— [Name, Grade / Role]</span>
-        </div>
+        <textarea id="review-comment" class="review-textarea" rows="3" placeholder="Add a quick comment (optional)" data-fr-placeholder="Ajoutez un commentaire (facultatif)"></textarea>
+
+        <a href="mailto:niriantsoa1304@gmail.com" id="review-submit" class="btn btn-primary" data-fr="Envoyer ma note">Send my rating</a>
+        <p class="review-note" data-fr="Ouvre votre application email — rien n&rsquo;est stocké sur ce site.">Opens your email app — nothing is stored on this site.</p>
       </div>
     </div>
   </section>
@@ -169,11 +179,11 @@
   <!-- LANGUAGES -->
   <section id="languages" class="section">
     <div class="container">
-      <h2 class="section-label">Languages</h2>
+      <h2 class="section-label" data-fr="Langues">Languages</h2>
       <div class="pill-row">
-        <span class="pill">Malagasy — Native</span>
-        <span class="pill">French — Fluent</span>
-        <span class="pill">English — Professional</span>
+        <span class="pill" data-fr="Malgache — Langue maternelle">Malagasy — Native</span>
+        <span class="pill" data-fr="Français — Courant">French — Fluent</span>
+        <span class="pill" data-fr="Anglais — Professionnel">English — Professional</span>
       </div>
     </div>
   </section>
@@ -182,15 +192,15 @@
   <section id="contact" class="section">
     <div class="container">
       <div class="contact-card">
-        <span class="section-label">Say hello</span>
-        <h2>Looking for a tutor, or want<br>to talk teaching?</h2>
-        <p>The fastest way to reach me is by email.</p>
+        <span class="section-label" data-fr="Dites bonjour">Say hello</span>
+        <h2 data-fr="Vous cherchez un professeur, ou<br>vous voulez parler pédagogie ?">Looking for a tutor, or want<br>to talk teaching?</h2>
+        <p data-fr="Le plus simple pour me joindre reste l&rsquo;email.">The fastest way to reach me is by email.</p>
         <div class="hero-actions">
           <a href="mailto:niriantsoa1304@gmail.com" class="btn btn-primary">niriantsoa1304@gmail.com</a>
           <a href="https://github.com/niriantsoa1304" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View GitHub profile">GitHub</a>
           <a href="https://www.linkedin.com/in/REPLACE_WITH_YOUR_HANDLE" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View LinkedIn profile">LinkedIn</a>
         </div>
-        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener">Download my CV →</a></p>
+        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener" data-fr="Télécharger mon CV →">Download my CV →</a></p>
       </div>
     </div>
   </section>

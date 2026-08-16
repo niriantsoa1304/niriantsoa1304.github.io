@@ -45,16 +45,18 @@
     <a href="index.html" class="logo">Niriantsoa Raherinaina</a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#testimonials">Testimonials</a>
+      <a href="#about" data-fr="À propos">About</a>
+      <a href="#work" data-fr="Travaux">Work</a>
+      <a href="#toolkit" data-fr="Compétences">Toolkit</a>
+      <a href="#reviews" data-fr="Avis">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
       <span class="icon-light" aria-hidden="true">☾</span><span class="icon-dark" aria-hidden="true">☀</span>
     </button>
+
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Passer en français">FR</button>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
@@ -67,18 +69,23 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-blob" aria-hidden="true"></div>
-    <div class="container hero-grid">
+    <div class="container hero-grid hero-split">
       <div class="hero-content">
-        <span class="eyebrow">✧ Software &amp; Data</span>
-        <h1>Building tools<br><span class="accent">that turn data into answers.</span></h1>
-        <p class="hero-text">
+        <span class="eyebrow" data-fr="✧ Logiciel &amp; Données">✧ Software &amp; Data</span>
+        <h1 data-fr='Créer des outils<br><span class="accent">qui transforment les données en réponses.</span>'>Building tools<br><span class="accent">that turn data into answers.</span></h1>
+        <p class="hero-text" data-fr="Je suis Niriantsoa — je développe de petits outils Python ciblés : pipelines de données, applications de bureau, et scripts de calcul scientifique. Actuellement disponible pour des missions de développement en freelance.">
           I'm Niriantsoa — I build small, focused tools in Python: data pipelines, desktop
           apps, and scientific computing scripts. Currently open for freelance programming
           work.
         </p>
         <div class="hero-actions">
-          <a href="#work" class="btn btn-primary">See my work</a>
-          <a href="#contact" class="btn btn-secondary">Hire me</a>
+          <a href="#work" class="btn btn-primary" data-fr="Voir mes projets">See my work</a>
+          <a href="#contact" class="btn btn-secondary" data-fr="Engagez-moi">Hire me</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="assets/placeholder-action-programmer.png" alt="">
         </div>
       </div>
     </div>
@@ -95,8 +102,8 @@
       </div>
 
       <div class="about-content">
-        <h2 class="section-label">About</h2>
-        <p class="about-text">
+        <h2 class="section-label" data-fr="À propos">About</h2>
+        <p class="about-text" data-fr="Je développe de petits outils Python ciblés — pipelines de données, applications de bureau, et scripts de calcul scientifique. Mon parcours en astronomie m&rsquo;a habituée à travailler avec des données réelles et désordonnées, et j&rsquo;aime les rendre claires et exploitables. Actuellement disponible pour des missions de développement en freelance.">
           I build small, focused tools in Python — data pipelines, desktop apps, and
           scientific computing scripts. My background in astronomy means I'm used to working
           with messy, real-world data, and I like turning it into something clear and usable.
@@ -105,16 +112,16 @@
 
         <div class="badge-row">
           <div class="info-badge">
-            <span class="info-badge-label">Based in</span>
+            <span class="info-badge-label" data-fr="Basée à">Based in</span>
             <span class="info-badge-value">Antananarivo, Madagascar</span>
           </div>
           <div class="info-badge">
-            <span class="info-badge-label">Focus</span>
-            <span class="info-badge-value">Python tooling &amp; data pipelines</span>
+            <span class="info-badge-label" data-fr="Spécialité">Focus</span>
+            <span class="info-badge-value" data-fr="Outils Python et pipelines de données">Python tooling &amp; data pipelines</span>
           </div>
           <div class="info-badge">
-            <span class="info-badge-label">Availability</span>
-            <span class="info-badge-value">Open for freelance work</span>
+            <span class="info-badge-label" data-fr="Disponibilité">Availability</span>
+            <span class="info-badge-value" data-fr="Ouverte aux missions freelance">Open for freelance work</span>
           </div>
         </div>
       </div>
@@ -124,43 +131,43 @@
   <!-- SELECTED WORK -->
   <section id="work" class="section">
     <div class="container">
-      <h2 class="section-label">Selected work</h2>
+      <h2 class="section-label" data-fr="Projets sélectionnés">Selected work</h2>
 
       <div class="work-grid">
         <article class="work-card">
-          <img class="card-thumb" src="assets/placeholder-project-moon.svg" alt="">
+          <img class="card-thumb" src="assets/placeholder-project-moon.png" alt="">
           <div class="tag-row">
             <span class="tag">Python</span>
             <span class="tag">Astropy</span>
             <span class="tag">PySide6</span>
           </div>
-          <h3>Moon Phase Calculator</h3>
-          <p>A desktop application using Astropy to calculate lunar phases and illumination, with a PySide6 interface.</p>
-          <a href="https://github.com/niriantsoa1304/Moon_Phase_Calculator_Francia.git" class="card-link" target="_blank" rel="noopener" aria-label="View Moon Phase Calculator on GitHub">View on GitHub →</a>
+          <h3 data-fr="Calculateur de phases lunaires">Moon Phase Calculator</h3>
+          <p data-fr="Une application de bureau utilisant Astropy pour calculer les phases lunaires et l&rsquo;illumination, avec une interface PySide6.">A desktop application using Astropy to calculate lunar phases and illumination, with a PySide6 interface.</p>
+          <a href="https://github.com/niriantsoa1304/Moon_Phase_Calculator_Francia.git" class="card-link" target="_blank" rel="noopener" aria-label="View Moon Phase Calculator on GitHub" data-fr="Voir sur GitHub →">View on GitHub →</a>
         </article>
 
         <article class="work-card">
-          <img class="card-thumb" src="assets/placeholder-project-imdb.svg" alt="">
+          <img class="card-thumb" src="assets/placeholder-project-imdb.png" alt="">
           <div class="tag-row">
             <span class="tag">Python</span>
             <span class="tag">Pandas</span>
             <span class="tag">Matplotlib</span>
           </div>
-          <h3>IMDb Movie Dataset Analysis</h3>
-          <p>An ETL and exploratory data analysis pipeline over a large IMDb movie dataset, answering key analytical questions with Pandas and Matplotlib.</p>
-          <a href="https://github.com/niriantsoa1304/IMDB_Movie_Analysis_Francia.git" class="card-link" target="_blank" rel="noopener" aria-label="View IMDb Movie Dataset Analysis on GitHub">View on GitHub →</a>
+          <h3 data-fr="Analyse du jeu de données de films IMDb">IMDb Movie Dataset Analysis</h3>
+          <p data-fr="Un pipeline ETL et d&rsquo;analyse exploratoire sur un large jeu de données de films IMDb, répondant à des questions analytiques clés avec Pandas et Matplotlib.">An ETL and exploratory data analysis pipeline over a large IMDb movie dataset, answering key analytical questions with Pandas and Matplotlib.</p>
+          <a href="https://github.com/niriantsoa1304/IMDB_Movie_Analysis_Francia.git" class="card-link" target="_blank" rel="noopener" aria-label="View IMDb Movie Dataset Analysis on GitHub" data-fr="Voir sur GitHub →">View on GitHub →</a>
         </article>
 
         <article class="work-card">
-          <img class="card-thumb" src="assets/placeholder-project-signal.svg" alt="">
+          <img class="card-thumb" src="assets/placeholder-project-signal.png" alt="">
           <div class="tag-row">
             <span class="tag">Python</span>
             <span class="tag">NumPy</span>
             <span class="tag">SciPy</span>
           </div>
-          <h3>Signal Generation &amp; Fourier Analysis</h3>
-          <p>A DSP project covering signal generation, FFT-based frequency analysis, noise filtering with a Butterworth filter, and signal reconstruction — applied to detecting periodicity in a simulated variable star light curve.</p>
-          <a href="https://github.com/niriantsoa1304/Signal_Processing_Francia.git" class="card-link" target="_blank" rel="noopener" aria-label="View Signal Generation and Fourier Analysis on GitHub">View on GitHub →</a>
+          <h3 data-fr="Génération de signaux et analyse de Fourier">Signal Generation &amp; Fourier Analysis</h3>
+          <p data-fr="Un projet de traitement du signal couvrant la génération de signaux, l&rsquo;analyse fréquentielle par FFT, le filtrage du bruit avec un filtre de Butterworth, et la reconstruction du signal — appliqué à la détection de périodicité dans une courbe de lumière d&rsquo;étoile variable simulée.">A DSP project covering signal generation, FFT-based frequency analysis, noise filtering with a Butterworth filter, and signal reconstruction — applied to detecting periodicity in a simulated variable star light curve.</p>
+          <a href="https://github.com/niriantsoa1304/Signal_Processing_Francia.git" class="card-link" target="_blank" rel="noopener" aria-label="View Signal Generation and Fourier Analysis on GitHub" data-fr="Voir sur GitHub →">View on GitHub →</a>
         </article>
       </div>
     </div>
@@ -169,11 +176,11 @@
   <!-- TOOLKIT -->
   <section id="toolkit" class="section">
     <div class="container">
-      <h2 class="section-label">Toolkit</h2>
+      <h2 class="section-label" data-fr="Compétences">Toolkit</h2>
 
       <div class="toolkit-grid">
         <div class="toolkit-col">
-          <h4>Programming</h4>
+          <h4 data-fr="Programmation">Programming</h4>
           <div class="pill-row">
             <span class="pill">Python</span>
             <span class="pill">NumPy</span>
@@ -186,34 +193,37 @@
         </div>
 
         <div class="toolkit-col">
-          <h4>Data Analysis</h4>
+          <h4 data-fr="Analyse de données">Data Analysis</h4>
           <div class="pill-row">
-            <span class="pill">Scientific Computing</span>
-            <span class="pill">Data Visualization</span>
-            <span class="pill">Data Pre-processing</span>
+            <span class="pill" data-fr="Calcul scientifique">Scientific Computing</span>
+            <span class="pill" data-fr="Visualisation de données">Data Visualization</span>
+            <span class="pill" data-fr="Prétraitement des données">Data Pre-processing</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="section">
+  <!-- RATE MY WORK -->
+  <section id="reviews" class="section">
     <div class="container">
-      <h2 class="section-label">Client feedback</h2>
+      <h2 class="section-label" data-fr="Donnez votre avis">Rate my work</h2>
 
-      <div class="work-grid">
-        <div class="work-card">
-          <img class="testimonial-avatar" src="assets/placeholder-avatar-1.svg" alt="">
-          <p>"[Add a testimonial from a client or collaborator — what did they say about working with you?]"</p>
-          <span class="card-link">— [Name, Company / Project]</span>
+      <div class="review-card">
+        <p class="review-intro" data-fr="Je débute tout juste en freelance, je n&rsquo;ai donc pas encore de témoignages clients. Si vous avez une minute, j&rsquo;adorerais avoir une note rapide — ou simplement votre avis.">I'm just starting to take on freelance projects, so I don't have client testimonials yet. If you've got a minute, I'd love a quick rating — or just tell me what you think.</p>
+
+        <div class="star-rating" id="star-rating" role="group" aria-label="Rate out of 5 stars">
+          <button type="button" class="rate-star" data-value="1" aria-label="1 star">★</button>
+          <button type="button" class="rate-star" data-value="2" aria-label="2 stars">★</button>
+          <button type="button" class="rate-star" data-value="3" aria-label="3 stars">★</button>
+          <button type="button" class="rate-star" data-value="4" aria-label="4 stars">★</button>
+          <button type="button" class="rate-star" data-value="5" aria-label="5 stars">★</button>
         </div>
 
-        <div class="work-card">
-          <img class="testimonial-avatar" src="assets/placeholder-avatar-2.svg" alt="">
-          <p>"[Add a second testimonial here.]"</p>
-          <span class="card-link">— [Name, Company / Project]</span>
-        </div>
+        <textarea id="review-comment" class="review-textarea" rows="3" placeholder="Add a quick comment (optional)" data-fr-placeholder="Ajoutez un commentaire (facultatif)"></textarea>
+
+        <a href="mailto:niriantsoa1304@gmail.com" id="review-submit" class="btn btn-primary" data-fr="Envoyer ma note">Send my rating</a>
+        <p class="review-note" data-fr="Ouvre votre application email — rien n&rsquo;est stocké sur ce site.">Opens your email app — nothing is stored on this site.</p>
       </div>
     </div>
   </section>
@@ -222,18 +232,18 @@
   <section id="contact" class="section">
     <div class="container">
       <div class="contact-card">
-        <span class="section-label">Say hello</span>
-        <h2>Have a project in mind?<br>Let's build it together.</h2>
-        <p>The fastest way to reach me is by email.</p>
+        <span class="section-label" data-fr="Dites bonjour">Say hello</span>
+        <h2 data-fr="Un projet en tête ?<br>Construisons-le ensemble.">Have a project in mind?<br>Let's build it together.</h2>
+        <p data-fr="Le plus simple pour me joindre reste l&rsquo;email.">The fastest way to reach me is by email.</p>
 
         <div class="badge-row" style="margin-bottom:1.5rem;">
           <div class="info-badge">
-            <span class="info-badge-label">Availability</span>
-            <span class="info-badge-value">Open for new projects</span>
+            <span class="info-badge-label" data-fr="Disponibilité">Availability</span>
+            <span class="info-badge-value" data-fr="Ouverte à de nouveaux projets">Open for new projects</span>
           </div>
           <div class="info-badge">
-            <span class="info-badge-label">Rate</span>
-            <span class="info-badge-value">[Add your rate — hourly or per project]</span>
+            <span class="info-badge-label" data-fr="Tarif">Rate</span>
+            <span class="info-badge-value" data-fr="[Ajoutez votre tarif — horaire ou par projet]">[Add your rate — hourly or per project]</span>
           </div>
         </div>
 
@@ -242,7 +252,7 @@
           <a href="https://github.com/niriantsoa1304" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View GitHub profile">GitHub</a>
           <a href="https://www.linkedin.com/in/REPLACE_WITH_YOUR_HANDLE" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View LinkedIn profile">LinkedIn</a>
         </div>
-        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener">Download my CV →</a></p>
+        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener" data-fr="Télécharger mon CV →">Download my CV →</a></p>
       </div>
     </div>
   </section>

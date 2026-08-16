@@ -44,15 +44,17 @@
     <a href="index.html" class="logo">Niriantsoa Raherinaina</a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="astronomer.html">Astronomer</a>
-      <a href="programmer.html">Programmer</a>
-      <a href="teacher.html">Teacher</a>
+      <a href="astronomer.html" data-fr="Astronome">Astronomer</a>
+      <a href="programmer.html" data-fr="Programmeur">Programmer</a>
+      <a href="teacher.html" data-fr="Professeur">Teacher</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
       <span class="icon-light" aria-hidden="true">☾</span><span class="icon-dark" aria-hidden="true">☀</span>
     </button>
+
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Passer en français">FR</button>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
@@ -65,18 +67,23 @@
   <!-- HERO / BIO -->
   <section class="hero">
     <div class="hero-blob" aria-hidden="true"></div>
-    <div class="container hero-grid">
+    <div class="container hero-grid hero-split">
       <div class="hero-content">
-        <span class="eyebrow">✧ Welcome</span>
-        <h1>Curiosity doesn't stay in one lane.<br><span class="accent">Neither do I.</span></h1>
-        <p class="hero-text">
+        <span class="eyebrow" data-fr="✧ Bienvenue">✧ Welcome</span>
+        <h1 data-fr='La curiosité ne reste pas dans une seule voie.<br><span class="accent">Moi non plus.</span>'>Curiosity doesn't stay in one lane.<br><span class="accent">Neither do I.</span></h1>
+        <p class="hero-text" data-fr="Je suis Niriantsoa — étudiante en master d&rsquo;astronomie, professeure de physique-chimie, et quelqu&rsquo;un qui bricole de petits outils Python à ses heures perdues. Basée à Antananarivo, Madagascar. Choisissez une voie ci-dessous, ou continuez à faire défiler — je vous promets qu&rsquo;elles se rejoignent.">
           I'm Niriantsoa — an astronomy graduate student, a physics &amp; chemistry teacher,
           and someone who builds small Python tools on the side. Based in Antananarivo,
           Madagascar. Pick a lane below, or scroll — I promise they connect.
         </p>
         <div class="hero-actions">
-          <a href="#explore" class="btn btn-primary">Explore</a>
-          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+          <a href="#explore" class="btn btn-primary" data-fr="Découvrir">Explore</a>
+          <a href="#contact" class="btn btn-secondary" data-fr="Me contacter">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="assets/profile.png" alt="Niriantsoa Raherinaina">
         </div>
       </div>
     </div>
@@ -85,29 +92,32 @@
   <!-- PERSONA PICKER -->
   <section id="explore" class="section">
     <div class="container">
-      <h2 class="section-label">What interests you more about me?</h2>
-      <p class="about-text">Three lenses, one person — explore whichever fits what brought you here.</p>
+      <h2 class="section-label" data-fr="Qu&rsquo;est-ce qui vous intéresse le plus chez moi ?">What interests you more about me?</h2>
+      <p class="about-text" data-fr="Trois regards, une seule personne — explorez celui qui correspond à ce qui vous amène ici.">Three lenses, one person — explore whichever fits what brought you here.</p>
 
       <div class="work-grid">
         <a href="astronomer.html" class="work-card">
-          <span class="section-label">✧ Astronomer</span>
-          <h3>Mapping the radio sky</h3>
-          <p>Radio astronomy, VLBI data reduction, and the DARA programme — my M.Sc. work at the University of Antananarivo.</p>
-          <span class="card-link">Explore →</span>
+          <img class="card-thumb" src="assets/placeholder-persona-astronomer.jpg" alt="">
+          <span class="section-label" data-fr="✧ Astronome">✧ Astronomer</span>
+          <h3 data-fr="Cartographier le ciel radio">Mapping the radio sky</h3>
+          <p data-fr="Radioastronomie, réduction de données VLBI, et le programme DARA — mon travail de master à l&rsquo;Université d&rsquo;Antananarivo.">Radio astronomy, VLBI data reduction, and the DARA programme — my M.Sc. work at the University of Antananarivo.</p>
+          <span class="card-link" data-fr="Découvrir →">Explore →</span>
         </a>
 
         <a href="programmer.html" class="work-card">
-          <span class="section-label">✧ Programmer</span>
-          <h3>Building tools with Python</h3>
-          <p>Data pipelines, desktop apps, and scientific computing scripts — available for freelance work.</p>
-          <span class="card-link">Explore →</span>
+          <img class="card-thumb" src="assets/placeholder-persona-programmer.jpg" alt="">
+          <span class="section-label" data-fr="✧ Programmeur">✧ Programmer</span>
+          <h3 data-fr="Créer des outils avec Python">Building tools with Python</h3>
+          <p data-fr="Pipelines de données, applications de bureau et scripts de calcul scientifique — disponible pour des missions en freelance.">Data pipelines, desktop apps, and scientific computing scripts — available for freelance work.</p>
+          <span class="card-link" data-fr="Découvrir →">Explore →</span>
         </a>
 
         <a href="teacher.html" class="work-card">
-          <span class="section-label">✧ Teacher</span>
-          <h3>Teaching physics &amp; chemistry</h3>
-          <p>Grade 11–12 and Seconde–Terminale, in both English and French systems — open for tutoring too.</p>
-          <span class="card-link">Explore →</span>
+          <img class="card-thumb" src="assets/placeholder-persona-teacher.jpg" alt="">
+          <span class="section-label" data-fr="✧ Professeur">✧ Teacher</span>
+          <h3 data-fr="Enseigner la physique et la chimie">Teaching physics &amp; chemistry</h3>
+          <p data-fr="Grade 11–12 et Seconde–Terminale, dans les systèmes anglophone et francophone — ouverte aussi aux cours particuliers.">Grade 11–12 and Seconde–Terminale, in both English and French systems — open for tutoring too.</p>
+          <span class="card-link" data-fr="Découvrir →">Explore →</span>
         </a>
       </div>
     </div>
@@ -117,15 +127,15 @@
   <section id="contact" class="section">
     <div class="container">
       <div class="contact-card">
-        <span class="section-label">Say hello</span>
-        <h2>Always glad to talk radio<br>astronomy, code — or the classroom.</h2>
-        <p>The fastest way to reach me is by email.</p>
+        <span class="section-label" data-fr="Dites bonjour">Say hello</span>
+        <h2 data-fr="Toujours ravie de parler radioastronomie,<br>code — ou salle de classe.">Always glad to talk radio<br>astronomy, code — or the classroom.</h2>
+        <p data-fr="Le plus simple pour me joindre reste l&rsquo;email.">The fastest way to reach me is by email.</p>
         <div class="hero-actions">
           <a href="mailto:niriantsoa1304@gmail.com" class="btn btn-primary">niriantsoa1304@gmail.com</a>
           <a href="https://github.com/niriantsoa1304" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View GitHub profile">GitHub</a>
           <a href="https://www.linkedin.com/in/REPLACE_WITH_YOUR_HANDLE" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="View LinkedIn profile">LinkedIn</a>
         </div>
-        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener">Download my CV →</a></p>
+        <p style="margin-top:1.5rem;"><a href="assets/resume.pdf" class="card-link" target="_blank" rel="noopener" data-fr="Télécharger mon CV →">Download my CV →</a></p>
       </div>
     </div>
   </section>
