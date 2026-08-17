@@ -255,6 +255,20 @@ h1, h2, h3, h4 {
   padding-block: 1.1rem;
 }
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.logo-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid var(--pill-border);
+}
+.logo-name {
   font-family: var(--font-head);
   font-weight: 700;
   font-size: clamp(0.95rem, 2.4vw, 1.15rem);
@@ -902,7 +916,7 @@ h1, h2, h3, h4 {
 
 /* Very narrow / foldable-outer screens */
 @media (max-width: 340px) {
-  .logo { font-size: 0.85rem; }
+  .logo-name { font-size: 0.85rem; }
   .eyebrow { font-size: 0.7rem; padding: 0.4rem 0.85rem; }
 }
 
