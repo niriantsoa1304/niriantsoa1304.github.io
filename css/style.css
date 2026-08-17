@@ -72,7 +72,6 @@ body,
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
   scroll-padding-top: var(--header-h);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -198,8 +197,7 @@ h1, h2, h3, h4 {
   min-height: calc(100dvh - var(--header-h));
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  scroll-snap-align: start;
+  justify-content: flex-start;
 }
 /* Subtle alternating wash so a long scroll of same-color sections reads
    with a little more depth and rhythm, without adding new palette colors */
@@ -400,7 +398,6 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  scroll-snap-align: start;
 }
 .hero-blob {
   position: absolute;
@@ -557,6 +554,8 @@ h1, h2, h3, h4 {
   gap: 1.75rem;
 }
 .work-card {
+  display: flex;
+  flex-direction: column;
   background: var(--white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--card-border);
@@ -643,6 +642,9 @@ h1, h2, h3, h4 {
 .card-link { color: var(--pink-deep); font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; }
 .card-link:hover,
 .work-card:hover .card-link { color: var(--pink-accent); }
+/* Keeps "Explore →" links aligned along the bottom of every card in a row,
+   regardless of how many lines the heading/description above it wrap to */
+.work-card .card-link { margin-top: auto; padding-top: 0.5rem; }
 
 /* ---------- Toolkit ---------- */
 .toolkit-grid {
@@ -902,4 +904,18 @@ h1, h2, h3, h4 {
 @media (max-width: 340px) {
   .logo { font-size: 0.85rem; }
   .eyebrow { font-size: 0.7rem; padding: 0.4rem 0.85rem; }
+}
+
+/* Short viewports — laptop browser windows with toolbars/bookmarks bars
+   eating vertical space, tablets/phones in landscape. Independent of
+   width: a wide-but-short window has the same cramped-height problem as
+   a narrow one. Scales the oversized base type/spacing back down so a
+   section's content needs less room, instead of overrunning the fold. */
+@media (max-height: 920px) {
+  html { font-size: 16px; }
+  .hero, .section { padding-block: clamp(2rem, 6vw, 3.5rem); }
+}
+@media (max-height: 760px) {
+  html { font-size: 14px; }
+  .hero, .section { padding-block: clamp(1.5rem, 5vw, 2.5rem); }
 }
