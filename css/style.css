@@ -596,7 +596,7 @@ h1, h2, h3, h4 {
   margin-bottom: 1.3rem;
 }
 /* ---------- Rate my work ---------- */
-#reviews .section-label { display: block; text-align: center; }
+#reviews .section-label { width: fit-content; margin-inline: auto; }
 .review-card {
   background: var(--white);
   border-radius: var(--radius-lg);
