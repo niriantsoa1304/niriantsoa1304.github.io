@@ -49,12 +49,18 @@
 
     *, *::before, *::after { box-sizing: border-box; }
     html, body { margin: 0; }
+    /* iOS / Android : pas de grossissement auto du texte en paysage */
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
       background: var(--wine-deep);
       color: var(--text);
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
       overflow-x: hidden;
+      /* clip (quand il est connu) coupe le débordement sans créer de zone de défilement */
+      overflow-x: clip;
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
@@ -64,6 +70,7 @@
       position: relative;
       isolation: isolate;
       min-height: 100vh;
+      min-height: 100svh; /* mobile : hauteur visible, barres du navigateur comprises */
       display: flex;
       flex-direction: column;
       background:
@@ -103,6 +110,7 @@
     .logo span { text-transform: uppercase; letter-spacing: .08em; font-size: .82em; }
     .nav-right { display: flex; align-items: center; gap: 52px; }
     .nav ul { display: flex; gap: 50px; list-style: none; margin: 0; padding: 0; }
+    .nav ul a, .btn-outline-sm { white-space: nowrap; }
     .nav ul a {
       font-size: 12.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
       color: var(--text-muted); transition: color .25s;
@@ -229,7 +237,7 @@
     .info-item {
       padding: 34px 24px;
       position: relative;
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex; flex-direction: column; justify-content: flex-start;
     }
     .info-item:first-child { padding-left: 0; }
     .info-item + .info-item::before {
@@ -380,7 +388,7 @@
 
     @media (max-width: 900px) {
       .about { padding-block: 72px; }
-      .about-card { grid-template-columns: 1fr; }
+      .about-card { grid-template-columns: minmax(0, 1fr); }
       .oval { width: min(100% - 16px, 360px); }
       .about-card { gap: 40px; }
     }
@@ -716,11 +724,14 @@
     /* ——— Footer / Contact ——— */
     /* overflow visible : la tête peut dépasser au-dessus du footer */
     .footer { position: relative; overflow: visible; z-index: 1;
+      /* la photo, plus large que l'écran sur mobile, ne doit pas élargir la page ;
+         clip laisse la tête dépasser vers le haut */
+      overflow-x: clip;
       /* fond de la section contact des maquettes */
       background: #110102; border-top: 1px solid rgba(200, 161, 94, .18); }
     /* halo rouge derrière l'arche, comme l'arche N/R de la maquette (#520910 → #1d0306) */
     .footer-main {
-      display: grid; grid-template-columns: 300px 1fr 1px minmax(300px, 400px);
+      display: grid; grid-template-columns: 300px 1fr 1px minmax(320px, 410px);
       grid-template-rows: auto auto;
       align-items: center; gap: 0 56px;
       /* même espace au-dessus du titre et sous les contacts */
@@ -819,7 +830,7 @@
       .footer-photo { grid-row: 1 / 4; align-self: end; }
     }
     @media (max-width: 700px) {
-      .footer-main { grid-template-columns: 1fr; text-align: center; padding-top: 56px; }
+      .footer-main { grid-template-columns: minmax(0, 1fr); text-align: center; padding-top: 56px; }
       .footer-title, .footer-body, .footer-quote, .footer-photo { grid-column: 1; grid-row: auto; }
       .footer-title { padding-top: 0; }
       .footer-body { padding-top: 0; }
@@ -844,6 +855,12 @@
       .contact-list a, .contact-list span.item { font-size: 17px; gap: 14px; }
       .footer-band p { font-size: 12px; letter-spacing: .2em; }
       .footer-band .wrap { gap: 10px; }
+    }
+    /* le slogan (plus long en français) peut passer sur deux lignes plutôt que déborder */
+    @media (max-width: 480px) {
+      .footer-band .rule { display: none; }
+      .footer-band .wrap { justify-content: center; }
+      .footer-band p { white-space: normal; text-align: center; font-size: 11px; letter-spacing: .14em; line-height: 1.6; }
     }
 
     /* ——— Menu mobile (3 barres) ——— */
@@ -910,7 +927,7 @@
       background: rgba(13, 1, 3, .82); color: var(--gold);
       border: 1px solid var(--gold);
       box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
-      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
       transition: background .25s, color .25s, transform .25s, opacity .3s;
     }
     .music:hover { background: var(--gold); color: var(--noir); transform: scale(1.06); }
@@ -1097,7 +1114,7 @@
     .cta-menu a {
       display: flex; align-items: center; gap: 12px; padding: 12px 18px 12px 12px;
       border-radius: 999px; border: 1px solid var(--line);
-      background: rgba(13, 1, 3, .92); backdrop-filter: blur(6px); color: var(--champagne);
+      background: rgba(13, 1, 3, .92); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: var(--champagne);
       font: 500 13px/1.2 var(--sans); letter-spacing: .04em; white-space: nowrap;
       box-shadow: 0 10px 30px rgba(0,0,0,.45);
       transition: border-color .25s, background .25s;
@@ -1144,8 +1161,17 @@
       .badge { width: 132px; height: 132px; right: -4%; }
       .info-item { padding: 28px 22px; }
     }
+    /* petits portables / tablettes en paysage : la nav complète doit tenir sur une ligne */
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .nav { gap: 20px; }
+      .logo { font-size: 21px; }
+      .nav-right { gap: 22px; }
+      .nav ul { gap: 20px; }
+      .nav ul a, .btn-outline-sm { font-size: 11.5px; letter-spacing: .1em; }
+      .btn-outline-sm { padding: 11px 16px; }
+    }
     @media (max-width: 900px) {
-      .hero-main { grid-template-columns: 1fr; }
+      .hero-main { grid-template-columns: minmax(0, 1fr); }
       .hero-text { padding-block: 20px 40px; }
       .portrait { width: min(100%, 420px); height: auto; aspect-ratio: 540 / 640; min-height: 0; margin-block: 12px 0; align-self: end; }
       .info .wrap { grid-template-columns: 1fr 1fr; }
@@ -1165,7 +1191,8 @@
       .logo span { display: block; }
       .btn-outline-sm { padding: 10px 16px; font-size: 10.5px; }
       .eyebrow { font-size: 11.5px; letter-spacing: .12em; }
-      h1 { font-size: 40px; }
+      /* « FROM MADAGASCAR » ≈ 9,7 × la taille de police : le titre tient toujours sur la largeur */
+      h1 { font-size: clamp(26px, calc((100vw - 32px) / 10), 40px); }
       .lead { font-size: 17px; }
       .btn-primary, .btn-link { font-size: 13px; }
       .info-label { font-size: 12px; }
@@ -1175,6 +1202,29 @@
       .badge::before { inset: 20px; }
       .info-item, .info-item:nth-child(3) { padding: 20px 10px; }
       .info-value { font-size: 20px; }
+    }
+    /* très petits téléphones (iPhone SE 1re gén., Galaxy Fold replié…) */
+    @media (max-width: 380px) {
+      .eyebrow { letter-spacing: .08em; }
+      .btn-primary { padding: 15px 24px; gap: 16px; }
+      .badge { width: 104px; height: 104px; right: 0; }
+      .badge::before { inset: 16px; }
+      .info-value { font-size: 18px; }
+      .hello { font-size: clamp(48px, 17vw, 64px); }
+      .path-title { font-size: clamp(44px, 15vw, 56px); }
+      .contact-list a, .contact-list span.item { font-size: 15.5px; gap: 12px; }
+      .contact-ico { width: 34px; height: 34px; }
+      .footer-quote { padding: 16px 26px 0; }
+      .footer-quote blockquote { font-size: 20px; }
+      .footer-quote .q { font-size: 48px; }
+      .music .tip { display: none; }
+    }
+    /* écrans tactiles : pas d'effet « soulevé » qui reste bloqué après un tap */
+    @media (hover: none) {
+      .path-card:hover, .proj-card:hover { transform: none; }
+      .path-card:hover .path-media img { transform: none; }
+      .music:hover { transform: none; }
+      .cta-main:hover { transform: none; }
     }
   </style>
 </head>
@@ -1841,7 +1891,8 @@
       btn.addEventListener('click', () => set(!document.documentElement.classList.contains('nav-open')));
       menu.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
-      window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) set(false); });
+      const wide = window.matchMedia('(min-width: 901px)'), onWide = e => { if (e.matches) set(false); };
+      wide.addEventListener ? wide.addEventListener('change', onWide) : wide.addListener(onWide);   // Safari < 14
       set(false);
       document.addEventListener('langchange', () => set(document.documentElement.classList.contains('nav-open')));
     })();
