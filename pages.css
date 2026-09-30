@@ -293,6 +293,8 @@ html.i18n-pending body { visibility: hidden; }
 .gallery figure:first-child img { border-radius: 999px 999px 0 0; }
 .gallery figcaption { margin-top: 12px; font-size: 13.5px; line-height: 1.5; color: var(--sand); }
 .gallery.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* grande arche au centre (TART) */
+.gallery.centre { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr); }
 .gallery.four figure:first-child img { border-radius: 999px 999px 0 0; }
 .gallery.land { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .gallery.land img, .gallery.land figure:first-child img { height: auto; aspect-ratio: 4 / 3; border-radius: 0; }
@@ -593,7 +595,7 @@ html.i18n-pending body { visibility: hidden; }
   .chips { justify-content: center; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .gallery .wide { grid-column: 1 / -1; order: -1; }
-  .gallery.four, .gallery.land { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery.four, .gallery.land, .gallery.centre { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sky-cards { grid-template-columns: minmax(0, 1fr); gap: 34px; max-width: 460px; margin-inline: auto; }
   .sky-next { margin-inline: auto; text-align: center; }
   .sky-stars { grid-template-columns: auto; row-gap: 18px; }
@@ -656,4 +658,510 @@ html.i18n-pending body { visibility: hidden; }
 /* filet de sécurité : un mot très long se coupe plutôt que de déborder */
 .proj-meta, .s-title, .pager strong, .fact-label, .fact-value, .card h3, .proj h3, .tl-body h3 { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
 /* titres de la frise : jamais de césure (placé en dernier pour l'emporter) */
-.timeline .tl-body h3 { hyphens: manual; -webkit-hyphens: manual; }
+.timeline .tl-body h3, .projects .proj h3 { hyphens: manual; -webkit-hyphens: manual; }
+
+/* ================================================================
+   Animations de la page Astronomie (body.astro)
+   Toutes désactivées si le visiteur limite les animations.
+   ================================================================ */
+.anim .d-hero .starfield { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+.scroll-progress { position: fixed; left: 0; top: 0; z-index: 60; height: 2px; width: 100%; transform-origin: 0 50%; transform: scaleX(var(--p, 0));
+  background: linear-gradient(90deg, rgba(200, 161, 94, .3), var(--gold) 60%, var(--champagne)); box-shadow: 0 0 10px rgba(200, 161, 94, .6); pointer-events: none; }
+.anim .d-title .ch { display: inline-block; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* — Premier écran : entrée en scène — */
+  .anim .d-hero .chapters { animation: fadeDown 1s var(--ease) .1s both; }
+  .anim .d-hero .eyebrow { animation: fadeUp 1s var(--ease) .25s both; }
+  .anim .d-pre { animation: blurIn 1.4s var(--ease) .45s both; }
+  .anim .d-title .ch { animation: letterUp 1.1s var(--ease) both; animation-delay: calc(.6s + var(--i) * .055s); }
+  .anim .d-lead { animation: fadeUp 1.2s var(--ease) 1.2s both; }
+  .anim .d-hero .d-actions .btn { animation: fadeUp 1s var(--ease) both; }
+  .anim .d-hero .d-actions .btn:nth-child(1) { animation-delay: 1.4s; }
+  .anim .d-hero .d-actions .btn:nth-child(2) { animation-delay: 1.52s; }
+  .anim .d-hero .fact { animation: fadeUp 1s var(--ease) both; }
+  .anim .d-hero .fact:nth-child(1) { animation-delay: 1.6s; } .anim .d-hero .fact:nth-child(2) { animation-delay: 1.7s; }
+  .anim .d-hero .fact:nth-child(3) { animation-delay: 1.8s; } .anim .d-hero .fact:nth-child(4) { animation-delay: 1.9s; }
+  .anim .d-hero .d-media.cutout .outline { animation: drawArch 1.8s var(--ease) .3s both; }
+  .anim .d-hero .d-media.cutout .frame { transform-origin: 50% 100%; animation: archUp 1.5s var(--ease) .15s both; }
+  .anim .d-hero .d-media .num { animation: popIn 1.2s var(--ease) 1.3s both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-14px); } }
+  @keyframes blurIn { from { opacity: 0; filter: blur(10px); letter-spacing: .12em; } }
+  @keyframes letterUp { from { opacity: 0; transform: translateY(.55em) rotate(6deg); filter: blur(6px); } }
+  @keyframes drawArch { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+  @keyframes archUp { from { transform: scaleY(0); } }
+  @keyframes popIn { from { opacity: 0; transform: scale(.3) rotate(-90deg); } }
+
+  /* — Apparitions en cascade dans chaque section (--d posé par le script) — */
+  .js .anim .rv { transition-delay: var(--d, 0s); }
+
+  /* Titres de section : balayage + mot calligraphié qui se dévoile */
+  .js .anim .s-head .s-title { clip-path: inset(0 100% 0 0); transition: clip-path 1.3s var(--ease) .1s; }
+  .js .anim .s-head.in .s-title { clip-path: inset(-20% -5% -20% 0); }
+  .js .anim .s-head .s-title .script { display: inline-block; opacity: 0; filter: blur(8px); transform: translateX(-12px); transition: opacity 1s ease .7s, filter 1s ease .7s, transform 1.2s var(--ease) .7s; }
+  .js .anim .s-head.in .s-title .script { opacity: 1; filter: none; transform: none; }
+  .js .anim .s-head .s-kicker { letter-spacing: .6em; opacity: 0; transition: letter-spacing 1.4s var(--ease), opacity 1s ease; }
+  .js .anim .s-head.in .s-kicker { letter-spacing: .24em; opacity: 1; }
+
+  /* Photos en arche : l'astre se lève (dévoilement par le bas + léger zoom arrière) */
+  .js .anim .gallery.arches figure.rv { transform: none; }
+  .js .anim .gallery.arches figure.rv img { clip-path: inset(100% 0 0 0); transform: scale(1.12); transition: clip-path 1.5s var(--ease) var(--d, 0s), transform 2.2s var(--ease) var(--d, 0s); }
+  .js .anim .gallery.arches figure.rv.in img { clip-path: inset(-10px -10px 0 -10px); transform: none; }
+  .js .anim .gallery.arches figure.rv figcaption { opacity: 0; transition: opacity 1s ease calc(var(--d, 0s) + .8s); }
+  .js .anim .gallery.arches figure.rv.in figcaption { opacity: 1; }
+
+  /* Frise : les points s'allument l'un après l'autre */
+  .js .anim .tl-item.rv::before { transform: translateX(-5px) scale(0); transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) calc(var(--d, 0s) + .3s); }
+  .js .anim .tl-item.rv.in::before { transform: translateX(-5px) scale(1); }
+  .anim .tl-item.now::before { animation: nowPulse 2.6s ease-in-out infinite; }
+  @keyframes nowPulse { 0%, 100% { box-shadow: 0 0 0 5px rgba(200, 161, 94, .18); } 50% { box-shadow: 0 0 0 10px rgba(200, 161, 94, 0), 0 0 14px var(--gold); } }
+
+  /* Carte du ciel : les orbites montent, la constellation se trace */
+  .js .anim .sky-card.rv { transform: translateY(50px) scale(.96); }
+  .js .anim .sky-card.rv.in { transform: none; }
+  .anim .sky-card .orb .sun { animation: sunGlow 3.4s ease-in-out infinite; }
+  @keyframes sunGlow { 50% { filter: drop-shadow(0 0 12px rgba(242, 226, 198, .9)); } }
+  .js .anim .sky-const .sky-stars li { opacity: 0; transform: scale(.8); transition: opacity .7s ease, transform .9s var(--ease); transition-delay: calc(.2s + var(--i, 0) * .22s); }
+  .js .anim .sky-const.in .sky-stars li { opacity: 1; transform: none; }
+  .js .anim .sky-const .sky-stars li::after { transform: scaleX(0); transform-origin: 0 50%; transition: transform .7s var(--ease) calc(.45s + var(--i, 0) * .22s); }
+  .js .anim .sky-const.in .sky-stars li::after { transform: none; }
+  .anim .sky-stars li::before { animation: twinkle 3s ease-in-out infinite; animation-delay: calc(var(--i, 0) * .5s); }
+  @keyframes twinkle { 50% { box-shadow: 0 0 0 5px rgba(200, 161, 94, .12), 0 0 16px var(--champagne); } }
+
+  /* Relevé officiel : les lignes glissent en place */
+  .js .anim .field-text.rv .record tbody tr { opacity: 0; transform: translateX(-20px); transition: opacity .8s ease, transform 1s var(--ease); }
+  .js .anim .field-text.rv.in .record tbody tr { opacity: 1; transform: none; }
+  .js .anim .field-text.rv.in .record tbody tr:nth-child(1) { transition-delay: .5s; }
+  .js .anim .field-text.rv.in .record tbody tr:nth-child(2) { transition-delay: .7s; }
+
+  /* Boutons : reflet doré au survol */
+  .anim .btn, .anim .tl-btn { position: relative; overflow: hidden; isolation: isolate; }
+  .anim .btn::before, .anim .tl-btn::before { content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 240, 210, .35) 50%, transparent 70%);
+    transform: translateX(-120%); transition: transform .9s var(--ease); }
+  .anim .btn:hover::before, .anim .tl-btn:hover::before { transform: translateX(120%); }
+}
+@media (prefers-reduced-motion: reduce) { .scroll-progress { display: none; } }
+
+/* Projets liés : cartes plus grandes (placé en dernier pour l'emporter) */
+.projects { gap: 28px; }
+.proj { padding: 34px 30px 30px; }
+.proj-meta { font-size: 13px; margin-bottom: 14px; }
+.proj h3 { font-size: clamp(27px, 2.2vw, 32px); margin-bottom: 14px; }
+.proj p { font-size: 16px; line-height: 1.7; margin-bottom: 22px; }
+.proj .stack { gap: 8px; margin-bottom: 26px; }
+.proj .stack li { font-size: 13px; padding: 7px 11px; }
+.proj-links a { font-size: 13px; }
+.proj-links .note { font-size: 14.5px; }
+@media (min-width: 1300px) { #projets .wrap { width: min(1400px, 100% - 64px); } }
+@media (min-width: 901px) and (min-height: 560px) {
+  .proj { min-height: clamp(340px, 58vh, 540px); padding-block: clamp(22px, 4vh, 40px); }
+}
+@media (min-width: 901px) and (min-height: 560px) and (max-height: 800px) {
+  .proj p { font-size: 15px; line-height: 1.55; }
+  .proj h3 { font-size: 25px; }
+}
+
+/* ——— Triptyque des chapitres : trois arches-portails ——— */
+.portals-sec { background:
+  radial-gradient(ellipse 60% 55% at 50% 70%, rgba(93, 8, 17, .45), transparent 70%), var(--wine-deep); }
+.portals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: end; }
+.portal {
+  position: relative; display: flex; align-items: flex-end; min-height: 460px; overflow: hidden; isolation: isolate;
+  container-type: inline-size;   /* le titre se règle sur la largeur de l'arche */
+  border: 1.5px solid var(--gold); border-bottom-width: 1px; border-radius: 999px 999px 0 0;
+  outline: 1px solid rgba(200, 161, 94, .4); outline-offset: 7px;
+  color: var(--champagne); text-align: center;
+  transition: transform .6s var(--ease), border-color .4s, box-shadow .6s;
+}
+.portal img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease), filter .6s; }
+.portal::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(21, 2, 4, .05) 0%, rgba(21, 2, 4, .45) 40%, rgba(21, 2, 4, .95) 78%, var(--wine-deep) 100%); }
+.portal-num { position: absolute; top: 16%; left: 50%; transform: translateX(-50%);
+  font-family: var(--serif); font-weight: 300; font-size: clamp(64px, 7vw, 110px); line-height: 1; letter-spacing: .08em;
+  color: rgba(242, 226, 198, .9); text-shadow: 0 6px 30px rgba(0, 0, 0, .6); }
+.portal-body { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; padding: 0 26px 30px; }
+.portal small { font: 500 12.5px/1.4 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.portal strong { max-width: 100%; font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.2vw, 38px); font-size: min(40px, calc((100cqw - 60px) / 12.5)); line-height: 1.05; letter-spacing: .01em; text-transform: uppercase; }
+.portal em { font-family: var(--script); font-style: normal; font-size: clamp(24px, 2vw, 30px); color: var(--gold); }
+.portal-text { max-width: 30ch; margin-top: 4px; font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-soft); }
+.portal-cta, .portal-here {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 11px 22px; border-radius: 999px;
+  font: 500 12.5px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.portal-cta { background: var(--gold); color: var(--noir); transition: background .3s, gap .3s; }
+.portal-cta svg { width: 16px; height: 16px; }
+.portal-here { border: 1px solid var(--line); color: var(--sand); }
+.portal:hover { transform: translateY(-8px); border-color: var(--champagne); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .8), 0 0 40px -10px rgba(200, 161, 94, .45); }
+.portal:hover img { transform: scale(1.07); }
+.portal:hover .portal-cta { background: var(--champagne); gap: 14px; }
+.portal:focus-visible { outline: 2px solid var(--champagne); outline-offset: 7px; }
+/* chapitre en cours : présent mais estompé */
+.portal.is-current { border-color: var(--line); outline-color: rgba(200, 161, 94, .15); }
+.portal.is-current img { filter: grayscale(.8) brightness(.55); }
+.portal.is-current .portal-num { color: rgba(242, 226, 198, .45); }
+
+@media (min-width: 901px) and (min-height: 560px) {
+  .portal { min-height: clamp(300px, calc(100vh - 290px), 620px); }
+  .portal-body { padding-bottom: clamp(18px, 3.4vh, 34px); }
+  .portal-text { margin-top: 0; }
+}
+@media (min-width: 901px) and (min-height: 560px) and (max-height: 760px) {
+  .portal-text { display: none; }
+  .portal-num { top: 12%; font-size: clamp(54px, 10vh, 90px); }
+}
+@media (max-width: 860px) {
+  .portals { grid-template-columns: minmax(0, 1fr); gap: 36px; max-width: 460px; margin-inline: auto; }
+  .portal { min-height: 420px; }
+  .portal-body { padding-inline: 18px; }
+}
+@media (hover: none) { .portal:hover { transform: none; } }
+
+/* Portrait détouré (page Enseignement) : buste coupé net en bas de l'arche, la tête dépasse en haut */
+.d-media.cutout.portrait { width: min(100%, 440px); }
+.d-media.cutout.portrait .outline { inset: 16% 6% 0 0; }
+.d-media.cutout.portrait .frame { inset: 24% 12% 0 6%; }
+/* la photo repose sur le bandeau des chiffres clés, qui passe devant son bas (coupé en biais à l'origine) */
+.d-hero-main:has(.portrait) { padding-bottom: 0; }
+.d-media.cutout.portrait { align-self: end; }
+.d-media.cutout.portrait .cut { margin-bottom: -14px; transform-origin: 50% 100%; }   /* marge sous le bandeau : le bas reste caché quand la photo monte */
+.d-hero:has(.portrait) .facts { z-index: 2; }
+.d-media.cutout.portrait .num { right: -6px; bottom: 18px; }
+@media (min-width: 901px) and (min-height: 560px) {
+  .d-media.cutout.portrait { width: min(100%, 580px, calc((100vh - 320px) * .78)); }
+}
+@media (max-width: 860px) { .d-hero-main .d-media.cutout.portrait { width: min(100%, 380px); } }
+/* titre de la page Enseignement : jamais de césure, taille réglée pour tenir sur une ligne */
+.d-hero-main:has(.portrait) .d-title { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: normal; font-size: clamp(34px, min(4.6vw, 10vh), 80px); }
+@media (max-width: 560px) { .d-hero-main:has(.portrait) .d-title { font-size: clamp(30px, 11vw, 44px); } }
+@media (prefers-reduced-motion: no-preference) {
+  /* entrée douce du portrait : simple fondu avec une légère montée */
+  .d-hero .d-media.cutout.portrait .cut { animation: portraitIn 2.4s cubic-bezier(.25, .8, .25, 1) .3s both; }
+  @keyframes portraitIn { from { opacity: 0; transform: translateY(14px); } }
+}
+
+/* Portrait Enseignement : couches en parallaxe, mêmes amplitudes que le hero de l'accueil */
+.d-media.cutout.portrait .cut     { translate: calc(var(--px, 0) * -16px) calc(var(--py, 0) * -8px); rotate: none; }
+.d-media.cutout.portrait .frame   { translate: calc(var(--px, 0) * 6px)   calc(var(--py, 0) * 4px); }
+.d-media.cutout.portrait .outline { translate: calc(var(--px, 0) * 10px)  calc(var(--py, 0) * 6px); }
+.d-media.cutout.portrait .num     { translate: calc(var(--px, 0) * 22px)  calc(var(--py, 0) * 14px); }
+
+/* Page Enseignement : toutes les photos en arche à filet or ; les photos en largeur ont une arche aplatie */
+.gallery.arches.land img, .gallery.arches.land figure:first-child img,
+.gallery.arches .wide img { border-radius: 50% 50% 0 0 / 30% 30% 0 0; }
+.gallery.arches figcaption { text-align: center; }
+.gallery.arches .wide figcaption { text-align: center; }
+
+/* « Ma démarche » : chaque principe montre sa preuve (vignette en arche + lien vers la section photos) */
+.card-thumb { display: block; width: 96px; aspect-ratio: 4 / 5; margin: 6px 0 16px; overflow: hidden;
+  border: 1.5px solid var(--gold); border-radius: 999px 999px 0 0; outline: 1px solid rgba(200, 161, 94, .45); outline-offset: 4px; }
+.card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.card:hover .card-thumb img { transform: scale(1.08); }
+.card-proof { margin-top: auto; align-self: center; }
+.card p { margin-bottom: 18px; }
+@media (min-width: 901px) and (min-height: 560px) {
+  .card-thumb { width: clamp(64px, 11vh, 110px); margin-bottom: 1.4vh; }
+}
+
+/* ——— « Ma démarche » : triptyque d'arches, la photo au sommet, médaillon doré, fil qui relie ——— */
+.principles-sec { background:
+  radial-gradient(ellipse 55% 50% at 50% 62%, rgba(93, 8, 17, .5), transparent 72%),
+  radial-gradient(1px 1px at 14% 22%, rgba(242,226,198,.5), transparent), radial-gradient(1px 1px at 86% 18%, rgba(242,226,198,.4), transparent),
+  var(--wine-deep); }
+.principles { position: relative; gap: 34px; }
+/* fil doré qui relie les trois médaillons */
+.principles::before { content: ""; position: absolute; left: 8%; right: 8%; top: var(--thread, 250px); height: 1px; z-index: 0;
+  background: linear-gradient(90deg, transparent, var(--gold) 12%, var(--gold) 88%, transparent); opacity: .55; }
+.principles .card {
+  z-index: 1; padding: 0 0 28px; overflow: hidden;
+  border: 1.5px solid var(--gold); border-radius: 999px 999px 0 0;
+  outline: 1px solid rgba(200, 161, 94, .4); outline-offset: 7px;
+  background: linear-gradient(180deg, #2a0409 0%, var(--card) 55%, #120103 100%);
+  box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .85);
+}
+.principles .card:hover { transform: translateY(-8px); box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .85), 0 0 40px -12px rgba(200, 161, 94, .5); }
+.principles .card-thumb { position: relative; width: 100%; height: clamp(170px, 18vw, 260px); aspect-ratio: auto; margin: 0;
+  border: 0; outline: 0; border-radius: 0; }
+.principles .card-thumb::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(21, 2, 4, 0) 45%, rgba(29, 3, 6, .85) 88%, var(--card) 100%); }
+.principles .card-step {
+  position: relative; z-index: 2; width: 66px; height: 66px; margin: -33px 0 14px; display: grid; place-items: center;
+  border: 1px solid var(--gold); border-radius: 50%; background: var(--card);
+  box-shadow: 0 0 0 6px rgba(29, 3, 6, .9), 0 0 24px rgba(200, 161, 94, .35);
+  font-family: var(--serif); font-size: 24px; letter-spacing: .08em; color: var(--gold);
+}
+.principles .card h3 { padding: 0 24px; font-size: clamp(26px, 2.3vw, 34px); }
+.principles .card h3::after { content: ""; display: block; width: 44px; height: 1px; margin: 14px auto 0; background: var(--gold); }
+.principles .card p { padding: 0 28px; max-width: 34ch; }
+.principles .card-proof { margin-top: auto; }
+@media (min-width: 901px) and (min-height: 560px) {
+  .principles .card-thumb { width: 100%; height: clamp(120px, 24vh, 250px); margin: 0; }
+  .principles .card-step { width: clamp(50px, 7.5vh, 66px); height: clamp(50px, 7.5vh, 66px); margin: calc(clamp(50px, 7.5vh, 66px) / -2) 0 1.4vh; font-size: clamp(18px, 2.8vh, 24px); }
+  .principles .card h3::after { margin-top: 1.4vh; }
+  .principles .card { padding-bottom: clamp(16px, 3vh, 28px); }
+}
+@media (min-width: 901px) and (min-height: 560px) and (max-height: 800px) {
+  .principles .card p { font-size: 14.5px; line-height: 1.5; }
+}
+@media (max-width: 860px) {
+  .principles::before { left: 50%; right: auto; top: 0; bottom: 0; width: 1px; height: auto;
+    background: linear-gradient(180deg, transparent, var(--gold) 8%, var(--gold) 92%, transparent); }
+}
+@media (hover: none) { .principles .card:hover { transform: none; } }
+.principles .card-step { font-size: 20px; letter-spacing: 0; }
+/* sans médaillons : pas de fil, un peu d'air entre la photo et le titre */
+.principles::before { display: none; }
+.principles .card h3 { margin-top: 6px; }
+/* frise à 4 étapes : grille 2 × 2 plutôt que 3 colonnes (évite une étape seule sur la 2e ligne) */
+@media (min-width: 1200px) and (min-height: 560px) {
+  .timeline:has(> .tl-item:nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; }
+}
+
+/* ——— Ateliers du samedi : texte + chiffres à gauche, collage d'arches à droite ——— */
+.workshop-sec { background:
+  radial-gradient(ellipse 50% 60% at 72% 55%, rgba(93, 8, 17, .5), transparent 70%),
+  radial-gradient(1px 1px at 10% 20%, rgba(242,226,198,.5), transparent), radial-gradient(1.5px 1.5px at 40% 80%, rgba(200,161,94,.6), transparent),
+  var(--wine-deep); }
+.workshop { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 56px; align-items: center; }
+.ws-lead { margin: 22px 0 0; max-width: 42ch; font-family: var(--serif); font-style: italic; font-size: clamp(20px, 1.8vw, 26px); line-height: 1.45; color: var(--champagne); }
+.ws-facts { display: flex; gap: 0; margin: 30px 0 0; padding: 0; list-style: none; }
+.ws-facts li { display: flex; flex-direction: column; gap: 4px; padding: 0 26px; border-left: 1px solid var(--line); }
+.ws-facts li:first-child { padding-left: 0; border-left: 0; }
+.ws-facts strong { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 4vw, 58px); line-height: 1; color: var(--gold); }
+.ws-facts span { font-size: 12.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--sand); line-height: 1.5; }
+
+.ws-collage { position: relative; aspect-ratio: 1.12; }
+.ws-collage figure { position: absolute; margin: 0; }
+.ws-collage img { display: block; width: 100%; height: 100%; object-fit: cover;
+  border: 1.5px solid var(--gold); outline: 1px solid rgba(200, 161, 94, .45); outline-offset: 6px;
+  box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .85); }
+.ws-collage figcaption { margin-top: 12px; text-align: center; font-size: 13px; color: var(--sand); }
+.ws-big { left: 12%; right: 0; top: 0; height: 74%; }
+.ws-big img { border-radius: 50% 50% 0 0 / 34% 34% 0 0; }
+.ws-big figcaption { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--champagne); }
+.ws-small { width: 36%; }
+.ws-small img { aspect-ratio: 4 / 5; height: auto; border-radius: 999px 999px 0 0; }
+.ws-a { left: 0; bottom: 0; z-index: 2; }
+.ws-b { right: 6%; bottom: -2%; z-index: 2; width: 30%; }
+.ws-collage .ws-small img { box-shadow: 0 0 0 8px var(--wine-deep), 0 30px 60px -20px rgba(0, 0, 0, .9); }
+
+@media (min-width: 901px) and (min-height: 560px) {
+  .ws-collage { width: min(100%, calc((100vh - 170px) * 1.12)); justify-self: center; }
+  .ws-facts { margin-top: 3.4vh; }
+}
+@media (max-width: 860px) {
+  .workshop { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .ws-text { text-align: center; }
+  .ws-lead { margin-inline: auto; }
+  .ws-facts { justify-content: center; }
+  .ws-facts li { padding: 0 16px; }
+  .ws-collage { aspect-ratio: .95; max-width: 520px; width: 100%; margin-inline: auto; }
+  .ws-big { left: 0; height: 62%; }
+  .ws-small { width: 44%; } .ws-b { width: 40%; right: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .ws-collage .ws-small.rv { transform: translateY(40px) rotate(-3deg); }
+  .js .ws-collage .ws-b.rv { transform: translateY(40px) rotate(3deg); }
+  .js .ws-collage .ws-small.rv.in { transform: none; }
+}
+.workshop .s-title { white-space: nowrap; font-size: clamp(32px, min(3.9vw, 8.5vh), 56px); }
+.ws-big figcaption { position: absolute; top: 20%; right: -10px; margin: 0; padding: 8px 16px; border-radius: 999px;
+  background: var(--gold); color: var(--noir); font-size: 17px; box-shadow: 0 10px 24px rgba(0, 0, 0, .45); }
+@media (max-width: 860px) {
+  .workshop .s-title { white-space: normal; }
+  .ws-facts li { padding: 0 clamp(8px, 3vw, 16px); }
+  .ws-facts span { font-size: 11.5px; letter-spacing: .06em; }
+  .ws-facts strong { font-size: 38px; }
+  .ws-big figcaption { right: 4px; font-size: 14px; }
+}
+
+/* ——— Animations propres à la page Enseignement ——— */
+@media (prefers-reduced-motion: no-preference) {
+  /* « Donner du sens » : les arches se lèvent l'une après l'autre, la photo se dévoile par le bas */
+  .js .anim .principles .card.rv { transform: translateY(70px) scale(.95); transition: opacity 1s var(--ease) var(--d, 0s), transform 1.4s var(--ease) var(--d, 0s); }
+  .js .anim .principles .card.rv.in { transform: none; }
+  .js .anim .principles .card.rv .card-thumb img { clip-path: inset(100% 0 0 0); transform: scale(1.15); transition: clip-path 1.4s var(--ease) calc(var(--d, 0s) + .25s), transform 2s var(--ease) calc(var(--d, 0s) + .25s); }
+  .js .anim .principles .card.rv.in .card-thumb img { clip-path: inset(0); transform: none; }
+  .js .anim .principles .card.rv h3::after { transform: scaleX(0); transition: transform .9s var(--ease) calc(var(--d, 0s) + .8s); }
+  .js .anim .principles .card.rv.in h3::after { transform: none; }
+
+  /* Atelier : la grande photo s'ouvre, puis les deux petites se posent comme des photos d'album */
+  .js .anim .ws-collage .ws-big.rv img { clip-path: inset(0 50% 0 50%); transition: clip-path 1.4s var(--ease) .1s; }
+  .js .anim .ws-collage .ws-big.rv.in img { clip-path: inset(-10px); }
+  .js .anim .ws-collage .ws-small.rv { opacity: 0; transform: translateY(-60px) rotate(-8deg) scale(1.08); transition: opacity .8s ease, transform 1.3s cubic-bezier(.34, 1.4, .5, 1); }
+  .js .anim .ws-collage .ws-a.rv { transition-delay: .6s; }
+  .js .anim .ws-collage .ws-b.rv { transform: translateY(-60px) rotate(8deg) scale(1.08); transition-delay: .85s; }
+  .js .anim .ws-collage .ws-small.rv.in { opacity: 1; transform: none; }
+  .js .anim .ws-big figcaption { transform: scale(0); transition: transform .8s cubic-bezier(.34, 1.6, .5, 1) 1.3s; }
+  .js .anim .ws-big.in figcaption { transform: none; }
+  /* chiffres de l'atelier : ils montent l'un après l'autre */
+  .js .anim .ws-facts.rv li { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform 1s var(--ease); }
+  .js .anim .ws-facts.rv.in li { opacity: 1; transform: none; }
+  .js .anim .ws-facts.rv.in li:nth-child(2) { transition-delay: .15s; } .js .anim .ws-facts.rv.in li:nth-child(3) { transition-delay: .3s; }
+
+  /* Portraits en arche des galeries : léger zoom au survol */
+  .anim .gallery.arches figure img { transition: clip-path 1.5s var(--ease) var(--d, 0s), transform 2.2s var(--ease) var(--d, 0s), filter .5s; }
+}
+/* « TEACHING » (anglais) est plus court qu'« ENSEIGNEMENT » : il peut être plus grand */
+html[lang="en"] .d-hero-main:has(.portrait) .d-title { font-size: clamp(44px, min(6.8vw, 13vh), 118px); }
+@media (max-width: 560px) { html[lang="en"] .d-hero-main:has(.portrait) .d-title { font-size: clamp(40px, 14vw, 60px); } }
+
+/* ——— Apparitions des photos : une manière différente par section ———
+   (la règle générale « lever par le bas » reste pour HartRAO et Donner du sens) */
+@media (prefers-reduced-motion: no-preference) {
+  /* Diplômée : rideau qui s'ouvre de gauche à droite */
+  .js .anim #diplome .gallery.arches figure.rv img { clip-path: inset(0 100% 0 0); transform: none; transition: clip-path 1.6s cubic-bezier(.77, 0, .18, 1) var(--d, 0s); }
+  .js .anim #diplome .gallery.arches figure.rv.in img { clip-path: inset(-10px); }
+
+  /* Au tableau : balayage comme une craie, avec un léger glissement */
+  .js .anim #classe .gallery.arches figure.rv img { clip-path: inset(0 100% 0 0); transform: translateX(-24px); transition: clip-path 1.2s linear var(--d, 0s), transform 1.4s var(--ease) var(--d, 0s); }
+  .js .anim #classe .gallery.arches figure.rv.in img { clip-path: inset(-10px); transform: none; }
+
+  /* Au labo : chaque photo tombe comme une goutte, du flou au net */
+  .js .anim #labo .gallery.arches figure.rv img { clip-path: none; opacity: 0; transform: translateY(-60px); filter: blur(10px);
+    transition: opacity .9s ease var(--d, 0s), transform 1.3s cubic-bezier(.34, 1.45, .5, 1) var(--d, 0s), filter 1.1s ease var(--d, 0s); }
+  .js .anim #labo .gallery.arches figure.rv.in img { opacity: 1; transform: none; filter: none; }
+
+  /* Pan-STARRS : ouverture en cercle, comme un diaphragme de télescope */
+  .js .anim #pan-starrs .gallery.arches figure.rv img { clip-path: circle(0% at 50% 55%); transform: scale(1.08); transition: clip-path 1.6s var(--ease) var(--d, 0s), transform 2s var(--ease) var(--d, 0s); }
+  .js .anim #pan-starrs .gallery.arches figure.rv.in img { clip-path: circle(150% at 50% 55%); transform: none; }
+
+  /* Kenya : mise au point, du flou au net */
+  .js .anim #kenya .gallery.arches figure.rv img { clip-path: none; opacity: 0; filter: blur(18px) brightness(.6); transform: scale(1.06);
+    transition: opacity 1s ease var(--d, 0s), filter 1.8s ease var(--d, 0s), transform 2.2s var(--ease) var(--d, 0s); }
+  .js .anim #kenya .gallery.arches figure.rv.in img { opacity: 1; filter: none; transform: none; }
+
+  /* Certifiée : éclat lumineux qui se dissipe */
+  .js .anim #certificats .gallery.arches figure.rv img { clip-path: none; opacity: 0; filter: brightness(2.6) saturate(.3); transform: scale(1.04);
+    transition: opacity .6s ease var(--d, 0s), filter 1.6s ease calc(var(--d, 0s) + .15s), transform 2s var(--ease) var(--d, 0s); }
+  .js .anim #certificats .gallery.arches figure.rv.in img { opacity: 1; filter: none; transform: none; }
+
+  /* TART : la photo centrale s'ouvre depuis le milieu, les côtés glissent vers elle */
+  .js .anim #tart .gallery.arches figure.rv img { clip-path: none; opacity: 0; transition: opacity 1s ease, transform 1.4s var(--ease); }
+  .js .anim #tart .gallery.arches figure.rv:nth-child(1) img { transform: translateX(-80px); transition-delay: .55s; }
+  .js .anim #tart .gallery.arches figure.rv:nth-child(3) img { transform: translateX(80px); transition-delay: .55s; }
+  .js .anim #tart .gallery.arches figure.rv.wide img { opacity: 1; clip-path: inset(0 50% 0 50%); transition: clip-path 1.4s cubic-bezier(.77, 0, .18, 1) .1s; }
+  .js .anim #tart .gallery.arches figure.rv.in img { opacity: 1; transform: none; }
+  .js .anim #tart .gallery.arches figure.rv.wide.in img { clip-path: inset(-10px); }
+}
+
+/* ================= Page Entrepreneuriat (body.biz) ================= */
+/* Titre : jamais de césure, taille réglée pour tenir sur une ligne */
+.biz .d-title { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: normal; font-size: clamp(30px, min(3.7vw, 9vh), 64px); }
+@media (max-width: 560px) { .biz .d-title { font-size: clamp(22px, 7.4vw, 40px); } }
+
+/* Scène « studio » : arche rouge, fenêtre de navigateur, étiquettes flottantes */
+.d-media.studio { width: min(100%, 500px); padding: 0; aspect-ratio: 5 / 5.4; justify-self: start; }
+.d-media.studio .outline { inset: 0 6% 0 0; }
+.d-media.studio .frame { position: absolute; inset: 9% 13% 0 7%; aspect-ratio: auto; border-radius: 999px 999px 0 0;
+  background: linear-gradient(180deg, var(--crimson) 0%, #6a0f19 45%, #41060c 100%); box-shadow: inset 0 0 80px rgba(21, 2, 4, .45); }
+.d-media.studio .browser { position: absolute; left: -4%; right: 2%; top: 30%; z-index: 2;
+  border-radius: 10px; overflow: hidden; border: 1px solid rgba(200, 161, 94, .55);
+  background: #0f0204; box-shadow: 0 40px 70px -25px rgba(0, 0, 0, .9), 0 0 0 6px rgba(21, 2, 4, .6); }
+.browser-bar { display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; background: #1d0306; border-bottom: 1px solid rgba(200, 161, 94, .25); }
+.browser-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(200, 161, 94, .55); }
+.browser-bar span { margin-left: 10px; padding: 3px 12px; border-radius: 999px; background: rgba(0, 0, 0, .35);
+  font: 500 11px/1.3 var(--sans); letter-spacing: .04em; color: var(--sand); }
+.d-media.studio .browser img { display: block; width: 100%; height: auto; aspect-ratio: 960 / 541; object-fit: cover; }
+.chip-float { position: absolute; z-index: 3; padding: 9px 16px; border-radius: 999px; white-space: nowrap;
+  font: 500 12.5px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase;
+  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, .7); }
+.chip-float.c1 { left: 2%; top: 17%; background: var(--gold); color: var(--noir); }
+.chip-float.c2 { right: -4%; top: 22%; background: rgba(13, 1, 3, .9); color: var(--champagne); border: 1px solid var(--gold); }
+.chip-float.c3 { left: 8%; bottom: 7%; background: rgba(13, 1, 3, .9); color: var(--gold); border: 1px solid var(--line); }
+.d-media.studio .num { left: auto; right: 2%; bottom: 3%; z-index: 3; }
+/* parallaxe en couches (mêmes réglages que le portrait) */
+.d-media.studio .browser  { translate: calc(var(--px, 0) * -16px) calc(var(--py, 0) * -8px); }
+.d-media.studio .frame    { translate: calc(var(--px, 0) * 6px)   calc(var(--py, 0) * 4px); }
+.d-media.studio .outline  { translate: calc(var(--px, 0) * 10px)  calc(var(--py, 0) * 6px); }
+.d-media.studio .c1       { translate: calc(var(--px, 0) * 26px)  calc(var(--py, 0) * 16px); }
+.d-media.studio .c2       { translate: calc(var(--px, 0) * -24px) calc(var(--py, 0) * 12px); }
+.d-media.studio .c3       { translate: calc(var(--px, 0) * 20px)  calc(var(--py, 0) * -14px); }
+.d-media.studio .num      { translate: calc(var(--px, 0) * 22px)  calc(var(--py, 0) * 14px); }
+@media (min-width: 901px) and (min-height: 560px) {
+  .d-media.studio { width: min(100%, 500px, calc((100vh - 330px) * .93)); }
+}
+@media (max-width: 860px) {
+  .d-media.studio { width: min(100% - 20px, 420px); justify-self: center; }
+  .chip-float { font-size: 11px; padding: 8px 12px; }
+  .chip-float.c2 { right: 0; }
+}
+
+/* Mission : texte + tableau Aujourd'hui → Avec Regulus Studio */
+.mission { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.mission .prose { max-width: none; }
+.shift { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; gap: 16px; }
+.shift-col { padding: 34px 26px 28px; border-radius: 999px 999px 0 0; text-align: center; }
+.shift-col ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.shift-label { margin: 0 0 18px; font: 500 12.5px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+.shift-col.before { border: 1px dashed rgba(200, 161, 94, .35); background: rgba(13, 1, 3, .35); }
+.shift-col.before .shift-label { color: var(--sand); }
+.shift-col.before li { font-size: 15px; color: rgba(242, 226, 198, .55); text-decoration: line-through; text-decoration-color: rgba(200, 161, 94, .7); }
+.shift-col.after { border: 1.5px solid var(--gold); outline: 1px solid rgba(200, 161, 94, .4); outline-offset: 6px;
+  background: linear-gradient(180deg, rgba(93, 8, 17, .6), rgba(29, 3, 6, .9)); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .8); }
+.shift-col.after .shift-label { color: var(--gold); }
+.shift-col.after li { font-family: var(--serif); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.3; color: var(--champagne); }
+.shift-arrow { display: grid; place-items: center; color: var(--gold); }
+.shift-arrow svg { width: 34px; height: 34px; }
+@media (max-width: 1000px) { .mission { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+@media (max-width: 560px) {
+  .shift { grid-template-columns: minmax(0, 1fr); }
+  .shift-arrow svg { transform: rotate(90deg); }
+}
+
+/* Méthode : trois arches reliées par un fil doré qui passe par les icônes */
+.process { position: relative; gap: 34px; }
+.process::before { content: ""; position: absolute; left: 10%; right: 10%; top: var(--thread, 74px); height: 1px; z-index: 0;
+  background: linear-gradient(90deg, transparent, var(--gold) 12%, var(--gold) 88%, transparent); opacity: .6; }
+.process .card { z-index: 1; border: 1.5px solid var(--gold); outline: 1px solid rgba(200, 161, 94, .4); outline-offset: 7px;
+  border-radius: 999px 999px 0 0; background: linear-gradient(180deg, #2a0409 0%, var(--card) 60%, #120103 100%);
+  box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .85); padding-top: 44px; }
+.process .card-ico { width: 78px; height: 78px; background: var(--card); box-shadow: 0 0 0 7px rgba(29, 3, 6, .95), 0 0 26px rgba(200, 161, 94, .35); }
+.process .card-ico svg { width: 34px; height: 34px; }
+.process .card h3::after { content: ""; display: block; width: 44px; height: 1px; margin: 14px auto 0; background: var(--gold); }
+@media (max-width: 860px) { .process::before { display: none; } }
+
+/* Réalisations : cartes à sommet en arche */
+.biz .projects .proj { border: 1.5px solid var(--gold); border-top-width: 1.5px; border-radius: 180px 180px 0 0;
+  padding-top: clamp(46px, 7vh, 64px); text-align: center; align-items: center;
+  background: linear-gradient(180deg, #2a0409 0%, var(--card) 45%); }
+.biz .projects .proj .stack, .biz .projects .proj .proj-links { justify-content: center; }
+
+/* Animations propres à la page */
+@media (prefers-reduced-motion: no-preference) {
+  .js .anim .shift.rv .shift-col.before li { transition: text-decoration-color .6s ease, opacity .6s ease; }
+  .js .anim .shift.rv:not(.in) .shift-col.before li { text-decoration-color: transparent; }
+  .js .anim .shift.rv.in .shift-col.before li:nth-child(1) { transition-delay: .6s; } .js .anim .shift.rv.in .shift-col.before li:nth-child(2) { transition-delay: .8s; }
+  .js .anim .shift.rv.in .shift-col.before li:nth-child(3) { transition-delay: 1s; }  .js .anim .shift.rv.in .shift-col.before li:nth-child(4) { transition-delay: 1.2s; }
+  .js .anim .shift.rv .shift-col.after { opacity: 0; transform: translateX(40px); transition: opacity 1s ease 1.3s, transform 1.2s var(--ease) 1.3s; }
+  .js .anim .shift.rv.in .shift-col.after { opacity: 1; transform: none; }
+  .js .anim .shift.rv .shift-arrow svg { transform: translateX(-20px); opacity: 0; transition: transform 1s var(--ease) 1.1s, opacity .6s ease 1.1s; }
+  .js .anim .shift.rv.in .shift-arrow svg { transform: none; opacity: 1; }
+  .js .anim .process .card.rv { transform: translateY(70px) scale(.95); }
+  .js .anim .process .card.rv.in { transform: none; }
+  .js .anim .process .card.rv .card-ico { transform: scale(0) rotate(-120deg); transition: transform 1s cubic-bezier(.34, 1.6, .5, 1) calc(var(--d, 0s) + .4s); }
+  .js .anim .process .card.rv.in .card-ico { transform: none; }
+  .js .anim .biz .projects .proj.rv { transform: translateY(60px) rotate(-2deg); }
+  .anim.biz .d-hero .chip-float { animation: chipIn 1s cubic-bezier(.34, 1.6, .5, 1) both; }
+  .anim.biz .d-hero .chip-float.c1 { animation-delay: 1.5s; } .anim.biz .d-hero .chip-float.c2 { animation-delay: 1.7s; } .anim.biz .d-hero .chip-float.c3 { animation-delay: 1.9s; }
+  @keyframes chipIn { from { opacity: 0; transform: scale(.4); } }
+  .anim.biz .d-hero .browser { animation: browserIn 1.6s var(--ease) .5s both; }
+  @keyframes browserIn { from { opacity: 0; transform: translateY(40px) perspective(900px) rotateX(18deg); } }
+}
+@media (hover: none) { .biz .projects .proj:hover { transform: none; } }
+/* corrections Entrepreneuriat */
+.biz .d-hero-main .d-title { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: normal; word-break: normal; font-size: clamp(28px, min(3.6vw, 9vh), 62px); }
+@media (max-width: 560px) { .biz .d-hero-main .d-title { font-size: clamp(21px, 7.2vw, 40px); } }
+.d-media.studio .browser { top: 22%; }
+.d-media.studio .num { right: 0; bottom: -4%; width: 84px; height: 84px; font-size: 28px; }
+.d-media.studio .chip-float.c3 { bottom: 4%; }
+.biz .projects .proj-meta { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: normal; letter-spacing: .08em; }
+.browser-bar span { font-size: 12px; }
+@media (max-width: 860px) { .chip-float { font-size: 12px; } }
+@media (max-width: 860px) { .ws-facts span { font-size: 12px; } }
+@media (min-width: 901px) and (max-width: 1100px) { .biz .projects .proj { padding-inline: 16px; } .biz .projects .proj p { font-size: 14px; overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; } }
+
+/* Aucune section ne doit élargir la page : les photos décalées en attente d'animation
+   (glissements, rotations, zooms) sont coupées à la largeur de l'écran.
+   « clip » ne crée pas de zone de défilement (le défilement de la page reste normal). */
+.d-section, body > footer, main { overflow-x: clip; }

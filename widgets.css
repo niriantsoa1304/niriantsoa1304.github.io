@@ -96,3 +96,14 @@
 @media (hover: none) {
   .music:hover, .cta-main:hover { transform: none; }
 }
+
+/* écrans très bas (téléphone couché) : boutons plus compacts, « Discutons » réduit à son icône */
+@media (max-height: 500px) {
+  .music { right: 12px; bottom: 12px; width: 42px; height: 42px; }
+  .music svg { width: 17px; height: 17px; }
+  .music .tip { display: none; }
+  .cta { right: 12px; bottom: calc(12px + 42px + 8px); }
+  .cta-main { width: 42px; height: 42px; padding: 0; justify-content: center; }
+  .cta-main > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .cta-menu a { padding: 8px 14px 8px 8px; }
+}
