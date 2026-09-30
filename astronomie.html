@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Langue (anglais par défaut, comme l'accueil) ; animations au défilement seulement si le navigateur les gère
+    (function (d) {
+      var l = 'en'; try { l = localStorage.getItem('lang') || 'en'; } catch (e) {}
+      d.lang = l;
+      if (l !== 'fr') { d.classList.add('i18n-pending'); setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500); }
+      if ('IntersectionObserver' in window) d.classList.add('js');
+    })(document.documentElement);
+  </script>
+  <title data-en="Astronomy — Niriantsoa Francia Raheriniaina">Astronomie — Niriantsoa Francia Raheriniaina</title>
+  <meta name="description" data-en-content="Master’s student in Astronomy &amp; Astrophysics, trained in radio astronomy and VLBI data reduction through the DARA programme." content="Étudiante en Master 2 d'Astronomie &amp; Astrophysique, formée en radioastronomie et en réduction de données VLBI par le programme DARA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="widgets.css">
+</head>
+<body>
+  <header class="d-hero">
+    <div class="top wrap">
+      <a href="index.html" class="logo" aria-label="Accueil" data-en-aria="Home">Niriantsoa Francia <span>Raheriniaina</span></a>
+      <div class="top-right">
+        <div class="lang" role="group" aria-label="Langue / Language">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en" title="English">EN</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="fr" aria-pressed="false" lang="fr" title="Français">FR</button>
+        </div>
+        <a href="index.html#parcours" class="back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>
+          <span class="label" data-en="Portfolio">Portfolio</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="wrap" aria-label="Chapitres" data-en-aria="Chapters">
+      <ul class="chapters">
+        <li><a href="enseignement.html" data-en="I · Teaching">I · Enseignement</a></li>
+        <li><a href="astronomie.html" aria-current="page" data-en="II · Astronomy">II · Astronomie</a></li>
+        <li><a href="entrepreneuriat.html" data-en="III · Entrepreneurship">III · Entrepreneuriat</a></li>
+      </ul>
+    </nav>
+
+    <div class="d-hero-main wrap flip">
+      <div>
+        <p class="eyebrow" data-en="✦ Chapter II">✦ Chapitre II</p>
+        <p class="d-pre" lang="en">To the moon and back;</p>
+        <h1 class="d-title" data-en="Astronomy">Astronomie</h1>
+        <p class="d-lead" data-en="Master’s student in Astronomy and Astrophysics at the University of Antananarivo and trained through the DARA programme, I analyse data from the sky, from optical to radio, and I am exploring how machine learning can advance radio astronomy.">
+          Étudiante en Master 2 d'Astronomie et Astrophysique à l'Université d'Antananarivo et formée par le programme DARA,
+          j'analyse les données du ciel, du visible à la radio, et j'explore l'apport du machine learning à la radioastronomie.
+        </p>
+        <div class="d-actions">
+          <a href="#projets" class="btn solid"><span data-en="Research &amp;amp; projects">Recherche &amp; projets</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a>
+          <a href="CVs/Niriantsoa-Raheriniaina-CV.pdf" class="btn" download><span data-en="Download CV">Télécharger CV</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+        </div>
+      </div>
+      <figure class="d-media cutout" style="margin:0">
+        <div class="outline" aria-hidden="true"></div>
+        <div class="frame" aria-hidden="true"></div>
+        <img class="cut" src="Assets/astronomie-lune.webp" alt="Niriantsoa enlace une grande maquette de la Lune, les yeux fermés, une jambe levée" data-en-alt="Niriantsoa hugs a giant model of the Moon, eyes closed, one leg raised" width="1029" height="1165" fetchpriority="high" decoding="async">
+        <span class="num" aria-hidden="true">II</span>
+      </figure>
+    </div>
+
+    <section class="facts" aria-label="En bref" data-en-aria="At a glance">
+      <div class="wrap">
+        <div class="fact rv"><p class="fact-value">M2</p><p class="fact-label" data-en="Astronomy &amp;amp; Astrophysics · Univ. of Antananarivo">Astronomie &amp; Astrophysique · Univ. d'Antananarivo</p></div>
+        <div class="fact rv"><p class="fact-value">DARA</p><p class="fact-label" data-en="Radio astronomy training · 2025 – 2026">Formation en radioastronomie · 2025 – 2026</p></div>
+        <div class="fact rv"><p class="fact-value">2</p><p class="fact-label" data-en="Provisional asteroids · Pan-STARRS">Astéroïdes provisoires · Pan-STARRS</p></div>
+        <div class="fact rv"><p class="fact-value">2</p><p class="fact-label" data-en="Conferences in 2026 · South Africa, Madagascar">Conférences en 2026 · Afrique du Sud, Madagascar</p></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="d-section" aria-labelledby="formation-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Training &amp;amp; research">✦ Formation &amp; recherche</p>
+            <h2 class="s-title" id="formation-title" data-en="My&lt;span class=&quot;script&quot;&gt;orbit&lt;/span&gt;">Mon<span class="script">orbite</span></h2>
+          </div>
+          <p class="s-intro" data-en="From teacher training to radio astronomy: the milestones that brought me to the sky.">De la formation d'enseignante à la radioastronomie : les étapes qui m'ont menée vers le ciel.</p>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item now rv">
+            <p class="tl-date" data-en="Ongoing">En cours</p>
+            <div class="tl-body">
+              <h3 data-en="Master’s (M2) in Astronomy &amp;amp; Astrophysics">Master 2 en Astronomie &amp; Astrophysique</h3>
+              <p class="tl-place" data-en="University of Antananarivo">Université d'Antananarivo</p>
+              <p class="tl-text" data-en="Coursework in galaxies, cosmology, Python programming and Linux.">Cours de galaxies, cosmologie, programmation Python et Linux.</p>
+              <div class="tl-links"><a class="tl-btn doc" href="Documents/master-releves-de-notes.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span data-en="View transcripts">Relevés de notes</span></a></div>
+            </div>
+          </li>
+          <li class="tl-item rv">
+            <p class="tl-date" data-en="June 2026">Juin 2026</p>
+            <div class="tl-body">
+              <h3>TART Madagascar</h3>
+              <p class="tl-place" data-en="University of Antananarivo">Université d'Antananarivo</p>
+              <div class="tl-links"><a class="tl-btn" href="#tart"><span data-en="More details">Plus de détails</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a></div>
+            </div>
+          </li>
+          <li class="tl-item rv">
+            <p class="tl-date" data-en="March 2026">Mars 2026</p>
+            <div class="tl-body">
+              <h3>DARA Annual Network Meeting</h3>
+              <p class="tl-place" data-en="South Africa">Afrique du Sud</p>
+              <p class="tl-text" data-en="Participant in the annual meeting of the DARA radio astronomy network.">Participante à la rencontre annuelle du réseau de radioastronomie DARA.</p>
+              <div class="tl-links"><a class="tl-btn" href="#certificats"><span data-en="More details">Plus de détails</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a></div>
+            </div>
+          </li>
+          <li class="tl-item rv">
+            <p class="tl-date" data-en="Aug – Sept 2025">Août – sept. 2025</p>
+            <div class="tl-body">
+              <h3 data-en="Pan-STARRS asteroid search campaign">Campagne de recherche d'astéroïdes Pan-STARRS</h3>
+              <p class="tl-place" data-en="With Sciences Physiques et Avenir">Avec Sciences Physiques et Avenir</p>
+              <p class="tl-text" data-en="Leading a team of 4: 2 provisional asteroid candidates, LFS1400 and NSF1206.">À la tête d'une équipe de 4 : 2 astéroïdes candidats provisoires, LFS1400 et NSF1206.</p>
+              <div class="tl-links"><a class="tl-btn" href="#pan-starrs"><span data-en="More details">Plus de détails</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a></div>
+            </div>
+          </li>
+          <li class="tl-item rv">
+            <p class="tl-date">2025 – 2026</p>
+            <div class="tl-body">
+              <h3 data-en="DARA Basic Training Programme">Programme de formation DARA</h3>
+              <p class="tl-place" data-en="Madagascar · Kenya · South Africa">Madagascar · Kenya · Afrique du Sud</p>
+              <ul>
+                <li data-en="Linux &amp;amp; Python with the CHPC · Antananarivo">Linux &amp; Python avec le CHPC · Antananarivo</li>
+                <li data-en="Optical &amp;amp; radio astronomy · Kenya, HartRAO">Astronomie optique &amp; radio · Kenya, HartRAO</li>
+                <li data-en="VLBI &amp;amp; radio data reduction · Antananarivo">Réduction de données VLBI &amp; radio · Antananarivo</li>
+                <li data-en="Scientific collaboration &amp;amp; career development">Collaboration scientifique &amp; carrière</li>
+              </ul>
+              <div class="tl-links"><a class="tl-btn" href="#kenya"><span data-en="More details">Plus de détails</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a></div>
+            </div>
+          </li>
+          <li class="tl-item rv">
+            <p class="tl-date">2021 – 2024</p>
+            <div class="tl-body">
+              <h3 data-en="Bachelor’s in Physics &amp;amp; Chemistry Education">Licence d'enseignement en physique-chimie</h3>
+              <p class="tl-place">École Normale Supérieure (ENS) · Antananarivo</p>
+              <p class="tl-text" data-en="Graduated with honours (14/20): the scientific foundation of everything that followed.">Obtenue avec mention (14/20) : le socle scientifique de tout ce qui a suivi.</p>
+              <div class="tl-links"><a class="tl-btn doc" href="Documents/licence-releves-de-notes.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span data-en="View transcripts">Relevés de notes</span></a><a class="tl-btn doc" href="Documents/licence-diplome.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span data-en="View diploma">Diplôme</span></a><a class="tl-btn" href="enseignement.html#diplome"><span data-en="Photos">Photos</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="d-section" id="pan-starrs" aria-labelledby="pan-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Aug 18 – Sept 12, 2025 · IASC">✦ 18 août – 12 sept. 2025 · IASC</p>
+            <h2 class="s-title" id="pan-title" data-en="Pan-STARRS&lt;span class=&quot;script&quot;&gt;asteroid hunters&lt;/span&gt;">Pan-STARRS<span class="script">chasseuses d'astéroïdes</span></h2>
+          </div>
+          <p class="s-intro" data-en="Pan Africa Asteroid Search Campaign: a team of four from Sciences Physiques et Avenir, led by me, combing Pan-STARRS images with Astrometrica to spot objects that move against the stars.">Pan Africa Asteroid Search Campaign : une équipe de quatre de Sciences Physiques et Avenir, que je dirigeais, a analysé des images Pan-STARRS avec Astrometrica pour repérer les objets qui se déplacent parmi les étoiles.</p>
+        </header>
+        <div class="field">
+          <div class="field-text rv">
+            <table class="record">
+              <caption data-en="Excerpt from the campaign’s official record">Extrait du relevé officiel de la campagne</caption>
+              <thead><tr><th data-en="Provisional">Provisoire</th><th data-en="Object">Objet</th><th data-en="Status">Statut</th></tr></thead>
+              <tbody>
+                <tr><td>P12ddwJ</td><td>LFS1400</td><td data-en="Preliminary">Préliminaire</td></tr>
+                <tr><td>P12ddwH</td><td>NSF1206</td><td data-en="Preliminary">Préliminaire</td></tr>
+              </tbody>
+            </table>
+            <p class="field-note" data-en="Reported on 19 August 2025 · R. Francia, N. Fandeferana, R. Laurence, I. Christinah · Sciences Physiques et Avenir, Madagascar.">Signalés le 19 août 2025 · R. Francia, N. Fandeferana, R. Laurence, I. Christinah · Sciences Physiques et Avenir, Madagascar.</p>
+          </div>
+          <div class="gallery arches pair">
+            <figure class="rv wide-arch">
+              <img src="Assets/panstarrs-equipe.webp" alt="Trois membres de l'équipe, de face, analysent des images astronomiques sur un ordinateur portable" data-en-alt="Three team members, facing the camera, analysing astronomical images on a laptop" width="1399" height="1050" loading="lazy" decoding="async" style="object-position:50% 30%">
+              <figcaption data-en="Hunting through the images">À la recherche d'objets mobiles</figcaption>
+            </figure>
+            <figure class="rv wide-arch">
+              <img src="Assets/panstarrs-certificats.webp" alt="Les quatre membres de l'équipe posent avec leurs certificats de la campagne" data-en-alt="The four team members pose with their campaign certificates" width="1400" height="987" loading="lazy" decoding="async" style="object-position:50% 40%">
+              <figcaption data-en="The team, certificates in hand">L'équipe, certificats en main</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section red" id="kenya" aria-labelledby="kenya-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ DARA · Kenya">✦ DARA · Kenya</p>
+            <h2 class="s-title" id="kenya-title" data-en="Kenya&lt;span class=&quot;script&quot;&gt;the optical eye&lt;/span&gt;">Kenya<span class="script">l'œil optique</span></h2>
+          </div>
+        </header>
+        <div class="field">
+          <div class="field-text rv">
+            <p class="statement" data-en="Hands-on optical astronomy training, from planning an observation to reducing the data.">Formation pratique en astronomie optique, de la préparation d'une observation jusqu'au traitement des données.</p>
+            <ul class="chips">
+              <li data-en="Coordinate systems">Systèmes de coordonnées</li>
+              <li data-en="Telescopes &amp;amp; detectors">Télescopes &amp; détecteurs</li>
+              <li data-en="Photometry">Photométrie</li>
+              <li data-en="Spectroscopy">Spectroscopie</li>
+              <li data-en="Night observing">Observations de nuit</li>
+              <li data-en="Radio interference (RFI)">Interférences radio (RFI)</li>
+            </ul>
+          </div>
+          <div class="gallery duo arches">
+            <figure class="rv">
+              <img src="Assets/kenya-nuit.webp" alt="De nuit, un groupe de stagiaires DARA autour d'une antenne sur trépied reliée à un appareil de mesure posé au sol" data-en-alt="At night, a group of DARA trainees around a tripod-mounted antenna connected to a measuring device on the ground" width="1400" height="1050" loading="lazy" decoding="async">
+              <figcaption data-en="A night session in the field">Séance de nuit sur le terrain</figcaption>
+            </figure>
+            <figure class="rv">
+              <img src="Assets/kenya-telescope.webp" alt="Télescope Sky-Watcher Flextube 400P de 40 cm sur une terrasse d'observation" data-en-alt="A 40 cm Sky-Watcher Flextube 400P telescope on an observing deck" width="720" height="1280" loading="lazy" decoding="async" style="object-position:50% 45%">
+              <figcaption data-en="A 40 cm telescope">Un télescope de 40 cm</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section alt" aria-labelledby="hartrao-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ DARA · South Africa">✦ DARA · Afrique du Sud</p>
+            <h2 class="s-title" id="hartrao-title" data-en="HartRAO&lt;span class=&quot;script&quot;&gt;under the dishes&lt;/span&gt;">HartRAO<span class="script">sous les antennes</span></h2>
+          </div>
+          <p class="s-intro" data-en="Hands-on radio astronomy training at the Hartebeesthoek Radio Astronomy Observatory: radio telescopes and receivers, single-dish and interferometric observations, VLBI techniques.">Formation pratique en radioastronomie à l'observatoire de Hartebeesthoek (HartRAO) : radiotélescopes et récepteurs, observations en antenne unique et en interférométrie, techniques VLBI.</p>
+        </header>
+        <div class="gallery four arches">
+          <figure class="rv">
+            <img src="Assets/hartrao-antenne.webp" alt="Niriantsoa, joyeuse, devant la grande antenne de radiotélescope de HartRAO" data-en-alt="Niriantsoa, beaming, in front of HartRAO’s large radio telescope dish" width="1000" height="1247" loading="lazy" decoding="async" style="object-position:50% 60%">
+            <figcaption data-en="In front of the big dish">Devant la grande antenne</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/hartrao-entree.webp" alt="Niriantsoa sous l'enseigne « HartRAO » à l'entrée de l'observatoire" data-en-alt="Niriantsoa beneath the “HartRAO” sign at the observatory entrance" width="1000" height="1333" loading="lazy" decoding="async" style="object-position:50% 35%">
+            <figcaption data-en="Hartebeesthoek Radio Astronomy Observatory">Observatoire de Hartebeesthoek</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/hartrao-site.webp" alt="Niriantsoa assise sur une barrière, avec deux antennes de l'observatoire et les collines en arrière-plan" data-en-alt="Niriantsoa sitting on a rail, with two of the observatory’s dishes and the hills behind her" width="1000" height="1333" loading="lazy" decoding="async" style="object-position:55% 55%">
+            <figcaption data-en="The antennas on site">Les antennes du site</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/hartrao-poste.webp" alt="Niriantsoa souriante à son poste de travail, un terminal Linux ouvert à l'écran" data-en-alt="Niriantsoa smiling at her workstation, a Linux terminal open on screen" width="1000" height="1333" loading="lazy" decoding="async" style="object-position:50% 40%">
+            <figcaption data-en="At the workstation">Au poste de travail</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section" id="certificats" aria-labelledby="certif-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ DARA · 2025 – 2026">✦ DARA · 2025 – 2026</p>
+            <h2 class="s-title" id="certif-title" data-en="Certified&lt;span class=&quot;script&quot;&gt;2025 cohort&lt;/span&gt;">Certifiée<span class="script">cohorte 2025</span></h2>
+          </div>
+        </header>
+        <div class="field">
+          <div class="field-text rv">
+            <p class="statement" data-en="A year of training between Madagascar, Kenya and South Africa, rewarded: the Malagasy DARA 2025 cohort receives its certificates.">Une année de formation entre Madagascar, le Kenya et l'Afrique du Sud, récompensée : la cohorte malgache DARA 2025 reçoit ses certificats.</p>
+            <p class="field-note" data-en="Alongside Prof. Solohery Randriamampandry, our professor at the University of Antananarivo.">Aux côtés du Prof. Solohery Randriamampandry, notre professeur à l'Université d'Antananarivo.</p>
+          </div>
+          <div class="gallery arches solo">
+            <figure class="rv">
+              <img src="Assets/dara-certificats.webp" alt="La cohorte malgache DARA 2025 pose avec ses certificats, entourée de deux formateurs, devant le public" data-en-alt="The Malagasy DARA 2025 cohort poses with their certificates, flanked by two trainers, in front of the audience" width="1600" height="1200" loading="lazy" decoding="async" style="object-position:50% 62%">
+              <figcaption data-en="Certificate ceremony, DARA 2025 cohort">Remise des certificats, cohorte DARA 2025</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section red" id="tart" aria-labelledby="tart-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ June 2026 · University of Antananarivo">✦ Juin 2026 · Université d'Antananarivo</p>
+            <h2 class="s-title" id="tart-title">TART<span class="script">Madagascar</span></h2>
+          </div>
+          <p class="s-intro" data-en="Installation workshop for Madagascar’s first Transient Array Radio Telescope (TART), an open-source radio telescope that watches the entire sky continuously: satellites, near-Earth objects and transient events.">Atelier d'installation du premier Transient Array Radio Telescope (TART) de Madagascar : un radiotélescope open source qui observe tout le ciel en continu, satellites, objets proches de la Terre et événements transitoires.</p>
+        </header>
+        <div class="gallery arches">
+          <figure class="rv">
+            <img src="Assets/tart-peinture.webp" alt="Niriantsoa et d'autres participants peignent en blanc les supports d'antennes du télescope TART" data-en-alt="Niriantsoa and other participants painting the TART antenna mounts white" width="1000" height="1333" loading="lazy" decoding="async" style="object-position:55% 40%">
+            <figcaption data-en="Painting the antenna mounts">Peindre les supports d'antennes</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/tart-antennes.webp" alt="Niriantsoa accroupie devant les antennes du TART, peintes aux couleurs du drapeau malgache, sur un toit d'Antananarivo" data-en-alt="Niriantsoa crouching in front of the TART antennas, painted in the colours of the Malagasy flag, on a rooftop in Antananarivo" width="1400" height="1050" loading="lazy" decoding="async" style="object-position:52% 50%">
+            <figcaption data-en="Antennas in the national colours">Les antennes aux couleurs du pays</figcaption>
+          </figure>
+          <figure class="rv wide">
+            <img src="Assets/tart-groupe.webp" alt="Photo de groupe des participants de TART Madagascar, bras levés, autour du télescope installé sur le toit" data-en-alt="Group photo of the TART Madagascar participants, arms raised, around the telescope installed on the rooftop" width="1600" height="1066" loading="lazy" decoding="async" style="object-position:50% 45%">
+            <figcaption data-en="The TART Madagascar team, with the telescope installed">L'équipe TART Madagascar, télescope installé</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section sky" aria-labelledby="outils-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Sky chart">✦ Carte du ciel</p>
+            <h2 class="s-title" id="outils-title" data-en="Skills&lt;span class=&quot;script&quot;&gt;&amp;amp; interests&lt;/span&gt;">Compétences<span class="script">&amp; intérêts</span></h2>
+          </div>
+          <div class="sky-next">
+            <svg class="traj" viewBox="0 0 320 70" preserveAspectRatio="none" aria-hidden="true"><path d="M6 62 C 110 62, 200 10, 312 10"/><path class="goal" d="M312 1 L314.5 7.5 L321 10 L314.5 12.5 L312 19 L309.5 12.5 L303 10 L309.5 7.5 Z"/><circle class="shoot" r="3.5"><animateMotion dur="5s" repeatCount="indefinite" path="M6 62 C 110 62, 200 10, 312 10"/></circle></svg>
+            <p class="sky-next-label" data-en="Heading for">Cap sur</p>
+            <p class="sky-next-text" data-en="a PhD in astronomy &amp;amp; astrophysics, applying machine learning to MeerKAT radio data.">un doctorat en astronomie &amp; astrophysique, avec le machine learning appliqué aux données radio de MeerKAT.</p>
+          </div>
+        </header>
+        <div class="sky-cards">
+          <article class="sky-card rv">
+            <svg class="orb" viewBox="0 0 120 60" aria-hidden="true"><ellipse cx="60" cy="30" rx="50" ry="19.0"/><circle class="sun" cx="60" cy="30" r="5"/><circle class="planet" r="3.2"><animateMotion dur="14s" repeatCount="indefinite" path="M 110 30 A 50 19.0 0 1 1 10 30 A 50 19.0 0 1 1 110 30"/></circle></svg>
+            <p class="sky-num">I · <span data-en="06 tools">06 outils</span></p>
+            <h3 data-en="Astronomy">Astronomie</h3>
+            <ul class="sky-list"><li>CASA</li><li>SAOImage DS9</li><li>Astrometrica</li><li data-en="Radio interferometry">Interférométrie radio</li><li>VLBI</li><li data-en="FITS data">Données FITS</li></ul>
+          </article>
+          <article class="sky-card rv">
+            <svg class="orb" viewBox="0 0 120 60" aria-hidden="true"><ellipse cx="60" cy="30" rx="40" ry="15.2"/><circle class="sun" cx="60" cy="30" r="5"/><circle class="planet" r="3.2"><animateMotion dur="10s" repeatCount="indefinite" path="M 100 30 A 40 15.2 0 1 1 20 30 A 40 15.2 0 1 1 100 30"/></circle></svg>
+            <p class="sky-num">II · <span data-en="07 tools">07 outils</span></p>
+            <h3 data-en="Programming">Programmation</h3>
+            <ul class="sky-list"><li>Python</li><li>NumPy</li><li>Pandas</li><li>Matplotlib</li><li>Astropy</li><li>Linux</li><li>Git / GitHub</li></ul>
+          </article>
+          <article class="sky-card rv">
+            <svg class="orb" viewBox="0 0 120 60" aria-hidden="true"><ellipse cx="60" cy="30" rx="30" ry="11.4"/><circle class="sun" cx="60" cy="30" r="5"/><circle class="planet" r="3.2"><animateMotion dur="7s" repeatCount="indefinite" path="M 90 30 A 30 11.4 0 1 1 30 30 A 30 11.4 0 1 1 90 30"/></circle></svg>
+            <p class="sky-num">III · <span data-en="03 tools">03 outils</span></p>
+            <h3 data-en="Data analysis">Analyse de données</h3>
+            <ul class="sky-list"><li data-en="Scientific computing">Calcul scientifique</li><li data-en="Visualisation">Visualisation</li><li data-en="Pre-processing">Pré-traitement</li></ul>
+          </article>
+        </div>
+        <div class="sky-const rv">
+          <p class="sky-const-label" data-en="Research constellation">Constellation de recherche</p>
+          <ul class="sky-stars"><li data-en="Radio astronomy">Radioastronomie</li><li>Machine learning</li><li data-en="Artificial intelligence">Intelligence artificielle</li><li data-en="Scientific computing">Calcul scientifique</li><li data-en="Signal processing">Traitement du signal</li><li data-en="Astronomical data">Données astronomiques</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section red" id="projets" aria-labelledby="projets-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Research · Code">✦ Recherche · Code</p>
+            <h2 class="s-title" id="projets-title" data-en="Related&lt;span class=&quot;script&quot;&gt;projects&lt;/span&gt;">Projets<span class="script">liés</span></h2>
+          </div>
+        </header>
+        <div class="projects">
+          <article class="proj rv">
+            <p class="proj-meta" data-en="Research · Aug – Sept 2025">Recherche · Août – sept. 2025</p>
+            <h3 data-en="Pan-STARRS asteroid search campaign">Campagne d'astéroïdes Pan-STARRS</h3>
+            <p data-en="Led a team of 4: identified 2 provisional asteroid candidates in Pan-STARRS images.">Cheffe d'une équipe de 4 : 2 astéroïdes candidats provisoires identifiés sur des images Pan-STARRS.</p>
+            <ul class="stack"><li>Astrometrica</li><li data-en="FITS images">Images FITS</li><li data-en="Astrometry">Astrométrie</li></ul>
+            <div class="proj-links"><span class="note">LFS1400 · NSF1206</span></div>
+          </article>
+          <article class="proj rv">
+            <p class="proj-meta" data-en="Astronomy · App">Astronomie · Application</p>
+            <h3>Moon Phase Calculator</h3>
+            <p data-en="An app that computes the Moon’s phase, illumination and age for any date, with a web version and an interactive 3D Moon.">Application qui calcule la phase, l'illumination et l'âge de la Lune pour n'importe quelle date, avec une version web et une Lune 3D interactive.</p>
+            <ul class="stack"><li>Python</li><li>Astropy</li><li>PySide6</li><li>JavaScript</li></ul>
+            <div class="proj-links">
+              <a href="https://github.com/niriantsoa1304/Moon_Phase_Calculator_Francia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.3a2.9 2.9 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.3 5.5 2.6 5.5 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9c0 4.7 2.8 5.7 5.5 6a2.9 2.9 0 0 0-.8 2.2V22"/></svg> <span data-en="App">Application</span></a>
+              <a href="https://github.com/niriantsoa1304/moon-phase-web" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.3a2.9 2.9 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.3 5.5 2.6 5.5 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9c0 4.7 2.8 5.7 5.5 6a2.9 2.9 0 0 0-.8 2.2V22"/></svg> <span data-en="Web version">Version web</span></a>
+            </div>
+          </article>
+          <article class="proj rv">
+            <p class="proj-meta" data-en="Signal processing">Traitement du signal</p>
+            <h3 data-en="Fourier analysis">Analyse de Fourier</h3>
+            <p data-en="Signal generation, fast Fourier transform, filtering and reconstruction, applied to finding the periods of variable stars.">Génération de signaux, transformée de Fourier rapide, filtrage et reconstruction, avec une application à la détection de la période d'étoiles variables.</p>
+            <ul class="stack"><li>Python</li><li>NumPy</li><li>FFT</li><li>Matplotlib</li></ul>
+            <div class="proj-links"><a href="https://github.com/niriantsoa1304/Signal_Processing_Francia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.3a2.9 2.9 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.3 5.5 2.6 5.5 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9c0 4.7 2.8 5.7 5.5 6a2.9 2.9 0 0 0-.8 2.2V22"/></svg> Code</a></div>
+          </article>
+          <article class="proj rv">
+            <p class="proj-meta" data-en="Astrophysics · Master’s">Astrophysique · Master</p>
+            <h3 data-en="Stellar data analysis">Analyse de données stellaires</h3>
+            <p data-en="Exploring galaxy catalogues, light curves, stellar evolution and black-body radiation using real and simulated data.">Exploration de catalogues de galaxies, courbes de lumière, évolution stellaire et rayonnement du corps noir à partir de données réelles et simulées.</p>
+            <ul class="stack"><li>Python</li><li>Pandas</li><li>Jupyter</li><li>Matplotlib</li></ul>
+            <div class="proj-links"><a href="https://github.com/niriantsoa1304/Astrophysics_Assignments_Francia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.3a2.9 2.9 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.3 5.5 2.6 5.5 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9c0 4.7 2.8 5.7 5.5 6a2.9 2.9 0 0 0-.8 2.2V22"/></svg> Code</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section" aria-labelledby="suite-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Keep reading">✦ Poursuivre</p>
+            <h2 class="s-title" id="suite-title" data-en="Other&lt;span class=&quot;script&quot;&gt;chapters&lt;/span&gt;">Autres<span class="script">chapitres</span></h2>
+          </div>
+        </header>
+        <div class="pager">
+          <a href="enseignement.html" class="rv">
+            <span class="thumb"><img src="Assets/enseignement.webp" alt="" loading="lazy" style="object-position:40% 38%"></span>
+            <span><small data-en="Chapter I">Chapitre I</small><strong data-en="Teaching">Enseignement</strong><em data-en="passing on knowledge">transmettre le savoir</em></span>
+          </a>
+          <a href="entrepreneuriat.html" class="rv">
+            <span class="thumb"><img src="Assets/regulus-studio.webp" alt="" loading="lazy" style="object-position:40% 100%"></span>
+            <span><small data-en="Chapter III">Chapitre III</small><strong data-en="Entrepreneurship">Entrepreneuriat</strong><em data-en="creating and innovating">créer et innover</em></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section class="d-contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title" class="rv" data-en="A research project, a PhD, a collaboration? Let’s talk">Un projet de recherche, un doctorat, une collaboration ? Parlons-en</h2>
+        <div class="d-actions rv">
+          <a class="btn solid" href="mailto:niriantsoa1304@gmail.com?subject=Astronomie%20%2F%20recherche" data-en-href="mailto:niriantsoa1304@gmail.com?subject=Astronomy%20%2F%20research">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+            <span data-en="Write to me">M'écrire</span></a>
+          <a class="btn" href="https://github.com/niriantsoa1304" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.3a2.9 2.9 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.3 5.5 2.6 5.5 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9c0 4.7 2.8 5.7 5.5 6a2.9 2.9 0 0 0-.8 2.2V22"/></svg>
+            GitHub</a>
+        </div>
+      </div>
+    </section>
+    <div class="footer-band">
+      <div class="wrap">
+        <span class="rule" aria-hidden="true"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z"/></svg>
+        <p data-en="Learn. Teach. Build.">Apprendre. Enseigner. Entreprendre.</p>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z"/></svg><span class="rule" aria-hidden="true"></span>
+      </div>
+    </div>
+  </footer>
+  <!-- Appel à l'action flottant : WhatsApp ou e-mail -->
+  <div class="cta" id="cta">
+    <ul class="cta-menu" id="cta-menu" aria-label="Me contacter" data-en-aria="Contact me">
+      <li><a class="wa" data-en-href="https://wa.me/261347418591?text=Hello%20Niriantsoa%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20with%20you." href="https://wa.me/261347418591?text=Bonjour%20Niriantsoa%2C%20j%27ai%20d%C3%A9couvert%20votre%20portfolio%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></span>
+        <span>WhatsApp<small data-en="Quick reply">Réponse rapide</small></span></a></li>
+      <li><a class="ml" data-en-href="mailto:niriantsoa1304@gmail.com?subject=Getting%20in%20touch%20via%20your%20portfolio" href="mailto:niriantsoa1304@gmail.com?subject=Prise%20de%20contact%20depuis%20votre%20portfolio">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
+        <span>E-mail<small>niriantsoa1304@gmail.com</small></span></a></li>
+    </ul>
+    <button class="cta-main" type="button" aria-expanded="false" aria-controls="cta-menu">
+      <svg class="chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10H9l-5 4v-14Z"/><path d="M8 9.5h8M8 12.5h5"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span data-en="Let’s talk">Discutons</span>
+    </button>
+  </div>
+  <!-- Musique d'ambiance : coupée par défaut, le visiteur l'active ou la coupe quand il veut -->
+  <audio id="bg-music" src="Assets/musique.mp3" loop preload="none"></audio>
+  <button class="music" type="button" aria-pressed="false" aria-label="Activer la musique" hidden>
+    <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+    <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+    <span class="tip">Activer la musique</span>
+  </button>
+  <script src="pages.js"></script>
+  <script src="widgets.js"></script>
+</body>
+</html>

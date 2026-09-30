@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Langue (anglais par défaut, comme l'accueil) ; animations au défilement seulement si le navigateur les gère
+    (function (d) {
+      var l = 'en'; try { l = localStorage.getItem('lang') || 'en'; } catch (e) {}
+      d.lang = l;
+      if (l !== 'fr') { d.classList.add('i18n-pending'); setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500); }
+      if ('IntersectionObserver' in window) d.classList.add('js');
+    })(document.documentElement);
+  </script>
+  <title data-en="Teaching — Niriantsoa Francia Raheriniaina">Enseignement — Niriantsoa Francia Raheriniaina</title>
+  <meta name="description" data-en-content="Physics and chemistry teacher trained at the École Normale Supérieure of Antananarivo, passionate about science outreach." content="Professeure de physique-chimie formée à l'École Normale Supérieure d'Antananarivo, passionnée de médiation scientifique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="widgets.css">
+</head>
+<body>
+  <header class="d-hero">
+    <div class="top wrap">
+      <a href="index.html" class="logo" aria-label="Accueil" data-en-aria="Home">Niriantsoa Francia <span>Raheriniaina</span></a>
+      <div class="top-right">
+        <div class="lang" role="group" aria-label="Langue / Language">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en" title="English">EN</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="fr" aria-pressed="false" lang="fr" title="Français">FR</button>
+        </div>
+        <a href="index.html#parcours" class="back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>
+          <span class="label" data-en="Portfolio">Portfolio</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="wrap" aria-label="Chapitres" data-en-aria="Chapters">
+      <ul class="chapters">
+        <li><a href="enseignement.html" aria-current="page" data-en="I · Teaching">I · Enseignement</a></li>
+        <li><a href="astronomie.html" data-en="II · Astronomy">II · Astronomie</a></li>
+        <li><a href="entrepreneuriat.html" data-en="III · Entrepreneurship">III · Entrepreneuriat</a></li>
+      </ul>
+    </nav>
+
+    <div class="d-hero-main wrap">
+      <div>
+        <p class="eyebrow" data-en="✦ Chapter I">✦ Chapitre I</p>
+        <h1 class="d-title" data-en="Teaching">Enseignement</h1>
+        <p class="d-tag" data-en="passing on knowledge">transmettre le savoir</p>
+        <p class="d-lead" data-en="A physics and chemistry teacher trained at the École Normale Supérieure of Antananarivo, I believe that well-told science can change a student’s path. My goal: to make science lively, concrete and accessible to everyone.">
+          Professeure de physique-chimie formée à l'École Normale Supérieure d'Antananarivo, je crois qu'une science bien racontée
+          peut changer une trajectoire. Mon objectif : rendre la science vivante, concrète et accessible à tous.
+        </p>
+        <div class="d-actions">
+          <a href="#projets" class="btn solid"><span data-en="Outreach projects">Projets de médiation</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a>
+          <a href="CVs/Niriantsoa-Raheriniaina-CV.pdf" class="btn" download><span data-en="Download CV">Télécharger CV</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+        </div>
+      </div>
+      <figure class="d-media" style="margin:0">
+        <div class="outline" aria-hidden="true"></div>
+        <div class="frame">
+          <img src="Assets/enseignement.webp" alt="Niriantsoa en blouse, entourée de ses élèves devant le tableau (visages des élèves floutés)" data-en-alt="Niriantsoa in a lab coat, surrounded by her students at the board (students’ faces blurred)" fetchpriority="high" style="object-position:40% 38%">
+        </div>
+        <span class="num" aria-hidden="true">I</span>
+      </figure>
+    </div>
+
+    <section class="facts" aria-label="En bref" data-en-aria="At a glance">
+      <div class="wrap">
+        <div class="fact rv"><p class="fact-value">14/20</p><p class="fact-label" data-en="Bachelor’s with honours · ENS">Licence avec mention · ENS</p></div>
+        <div class="fact rv"><p class="fact-value">30</p><p class="fact-label" data-en="Young scouts at a talk on the Sun">Jeunes scouts à une conférence sur le Soleil</p></div>
+        <div class="fact rv"><p class="fact-value" data-en="4 weeks">4 semaines</p><p class="fact-label" data-en="Of Saturday workshops · 10 students · SPA &amp;amp; MASS">D'ateliers du samedi · 10 élèves · SPA &amp; MASS</p></div>
+        <div class="fact rv"><p class="fact-value">3</p><p class="fact-label" data-en="Languages · Malagasy · French · English">Langues · malgache · français · anglais</p></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="d-section" aria-labelledby="demarche-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ How I teach">✦ Ma démarche</p>
+            <h2 class="s-title" id="demarche-title" data-en="Making&lt;span class=&quot;script&quot;&gt;sense&lt;/span&gt;">Donner<span class="script">du sens</span></h2>
+          </div>
+          <p class="s-intro" data-en="Three principles, drawn from the classroom and from outreach, guide the way I pass science on.">Trois principes, nés en classe et sur le terrain, guident ma façon de transmettre la science.</p>
+        </header>
+        <div class="cards">
+          <article class="card rv">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M12 4h8M13 4v8L6 25a2 2 0 0 0 1.8 3h16.4a2 2 0 0 0 1.8-3L19 12V4"/><path d="M9.5 19h13"/></svg></div>
+            <p class="card-step">I</p>
+            <h3 data-en="Start from the concrete">Partir du concret</h3>
+            <p data-en="Experiments built with local, low-cost materials: science should not depend on a well-equipped laboratory.">Des expériences montées avec du matériel local et peu coûteux : la science ne doit pas dépendre d'un laboratoire bien équipé.</p>
+          </article>
+          <article class="card rv">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><circle cx="11" cy="10" r="3.5"/><circle cx="22" cy="10" r="3.5"/><path d="M4 26c0-4 3-7 7-7s7 3 7 7M15 26c0-4 3-7 7-7s6 3 6 7"/></svg></div>
+            <p class="card-step">II</p>
+            <h3 data-en="Learn by doing">Faire manipuler</h3>
+            <p data-en="Interactive talks and hands-on workshops where students ask questions, test and observe for themselves.">Présentations interactives et ateliers pratiques où les élèves questionnent, testent et observent par eux-mêmes.</p>
+          </article>
+          <article class="card rv">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 26h22M5 26V6"/><path d="M7 23c4-1 6-12 10-12s5 8 9 8"/><circle cx="17" cy="11" r="1.4" fill="currentColor"/></svg></div>
+            <p class="card-step">III</p>
+            <h3 data-en="Show the reasoning">Expliquer le raisonnement</h3>
+            <p data-en="Not just the answer, but every step that leads to it: that is the spirit of Fonctio, my function-study platform.">Pas seulement le résultat, mais chaque étape qui y mène : c'est l'esprit de Fonctio, ma plateforme d'étude de fonctions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section alt" aria-labelledby="parcours-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Milestones">✦ Étapes</p>
+            <h2 class="s-title" id="parcours-title" data-en="My&lt;span class=&quot;script&quot;&gt;path&lt;/span&gt;">Mon<span class="script">chemin</span></h2>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item rv">
+            <p class="tl-date">2021 – 2024</p>
+            <div class="tl-body">
+              <h3 data-en="Bachelor’s in Physics &amp;amp; Chemistry Education">Licence d'enseignement en physique-chimie</h3>
+              <p class="tl-place">École Normale Supérieure (ENS) · Antananarivo</p>
+              <p class="tl-text" data-en="Teacher training in physics and chemistry, graduated with honours (14/20).">Formation de professeure de physique-chimie, obtenue avec mention (14/20).</p>
+            </div>
+          </li>
+          <li class="tl-item rv">
+            <p class="tl-date" data-en="Classroom">En classe</p>
+            <div class="tl-body">
+              <h3 data-en="Physics &amp;amp; chemistry teacher">Professeure de physique-chimie</h3>
+              <p class="tl-place">Antananarivo, Madagascar</p>
+              <p class="tl-text" data-en="Teaching physics and chemistry to secondary school students, with a constant concern: making abstract notions tangible.">Enseignement de la physique-chimie auprès d'élèves du secondaire, avec un souci constant : rendre tangibles les notions abstraites.</p>
+            </div>
+          </li>
+          <li class="tl-item rv">
+            <p class="tl-date" data-en="Outreach">Médiation</p>
+            <div class="tl-body">
+              <h3>Sciences Physiques et Avenir</h3>
+              <p class="tl-place" data-en="Science association">Association scientifique</p>
+              <ul>
+                <li data-en="An interactive talk on solar physics for 30 young scouts.">Présentation interactive sur la physique du Soleil pour 30 jeunes scouts.</li>
+                <li data-en="Saturday workshops over 4 weeks for 10 students, with the Malagasy Astronomical Society (MASS), using local, low-cost materials.">Ateliers du samedi pendant 4 semaines pour 10 élèves, avec la Malagasy Astronomical Society (MASS), à partir de matériel local et peu coûteux.</li>
+                <li data-en="Led a team of 4 in a Pan-STARRS asteroid search campaign: 2 provisional candidates identified.">Cheffe d'une équipe de 4 lors d'une campagne de recherche d'astéroïdes Pan-STARRS : 2 candidats provisoires identifiés.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="tl-item now rv">
+            <p class="tl-date" data-en="Today">Aujourd'hui</p>
+            <div class="tl-body">
+              <h3 data-en="Teaching meets code">L'enseignement rencontre le code</h3>
+              <p class="tl-text" data-en="I build digital tools for learners, like Fonctio, and bridge the classroom, the sky and entrepreneurship.">Je conçois des outils numériques pour les élèves, comme Fonctio, et je relie la salle de classe, le ciel et l'entreprise.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="d-section red" id="diplome" aria-labelledby="ens-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ 2021 – 2024 · ENS Antananarivo">✦ 2021 – 2024 · ENS Antananarivo</p>
+            <h2 class="s-title" id="ens-title" data-en="Graduated&lt;span class=&quot;script&quot;&gt;with honours&lt;/span&gt;">Diplômée<span class="script">avec mention</span></h2>
+          </div>
+        </header>
+        <div class="field">
+          <div class="field-text rv">
+            <p class="statement" data-en="Bachelor’s in Physics &amp;amp; Chemistry Education, graduated with honours (14/20).">Licence d'enseignement en physique-chimie, obtenue avec mention (14/20).</p>
+            <p class="field-note" data-en="École Normale Supérieure, University of Antananarivo: the teacher training that grounds everything I pass on today.">École Normale Supérieure, Université d'Antananarivo : la formation d'enseignante qui fonde tout ce que je transmets aujourd'hui.</p>
+          </div>
+          <div class="gallery arches duo">
+            <figure class="rv">
+              <img src="Assets/ens-amphi.webp" alt="Niriantsoa, souriante en toge et écharpe ENS, dans l'amphithéâtre lors de la cérémonie de remise des diplômes" data-en-alt="Niriantsoa, smiling in her gown and ENS stole, in the lecture hall during the graduation ceremony" width="1400" height="1050" loading="lazy" decoding="async" style="object-position:40% 40%">
+              <figcaption data-en="Graduation ceremony">Cérémonie de remise des diplômes</figcaption>
+            </figure>
+            <figure class="rv">
+              <img src="Assets/ens-diplome.webp" alt="Niriantsoa en toge et toque, tenant son attestation de Licence de l'École Normale Supérieure" data-en-alt="Niriantsoa in cap and gown, holding her Bachelor’s certificate from the École Normale Supérieure" width="800" height="1067" loading="lazy" decoding="async" style="object-position:50% 30%">
+              <figcaption data-en="The Licence in hand">La Licence en main</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section" aria-labelledby="classe-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ In the classroom">✦ En classe</p>
+            <h2 class="s-title" id="classe-title" data-en="At the&lt;span class=&quot;script&quot;&gt;board&lt;/span&gt;">Au<span class="script">tableau</span></h2>
+          </div>
+          <p class="s-intro" data-en="A physics lesson on the transformer, 26 March 2024: definition, description, circuit diagram, roles, types and turns ratio, built step by step with the class.">Un cours de physique sur le transformateur, le 26 mars 2024 : définition, description, schéma, rôles, types et rapport de transformation, construits pas à pas avec la classe.</p>
+        </header>
+        <div class="gallery">
+          <figure class="rv">
+            <img src="Assets/classe-cours.webp" alt="Niriantsoa en blouse blanche écrit « Transformateur » au tableau, face à une classe d'élèves en tablier bleu, vus de dos" data-en-alt="Niriantsoa, in a white lab coat, writes “Transformateur” on the board in front of a class of students in blue smocks, seen from behind" width="1200" height="1600" loading="lazy" decoding="async">
+            <figcaption data-en="Lesson in progress">Cours en direct</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/classe-tableau.webp" alt="Niriantsoa au tableau, notes de cours à la main" data-en-alt="Niriantsoa at the board, lesson notes in hand" width="1200" height="1600" loading="lazy" decoding="async">
+            <figcaption data-en="Lesson notes in hand">Notes de cours en main</figcaption>
+          </figure>
+          <figure class="rv wide">
+            <img src="Assets/classe-tableaux.webp" alt="Deux tableaux couverts du cours complet sur le transformateur, sous la devise « Ny fianarana no maha olom-banona » peinte au mur" data-en-alt="Two blackboards covered with the full lesson on the transformer, below the motto “Ny fianarana no maha olom-banona” painted on the wall" width="1600" height="1200" loading="lazy" decoding="async">
+            <figcaption data-en="“Ny fianarana no maha olom-banona”: it is learning that makes a complete person">« Ny fianarana no maha olom-banona » : c'est l'instruction qui fait l'être accompli</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section alt" aria-labelledby="labo-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Lab work">✦ Travaux pratiques</p>
+            <h2 class="s-title" id="labo-title" data-en="In the&lt;span class=&quot;script&quot;&gt;lab&lt;/span&gt;">Au<span class="script">labo</span></h2>
+          </div>
+          <p class="s-intro" data-en="The chemistry side: organic chemistry practicals, from the reflux set-up to extraction and filtration. Handling things is how you understand them.">Côté chimie : travaux pratiques de chimie organique, du montage à reflux à l'extraction et à la filtration. Manipuler, c'est comprendre.</p>
+        </header>
+        <div class="gallery four">
+          <figure class="rv">
+            <img src="Assets/labo-portrait.webp" alt="Niriantsoa souriante en blouse blanche, bras croisés, dans un laboratoire de chimie" data-en-alt="Niriantsoa smiling in a white lab coat, arms crossed, in a chemistry laboratory" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:50% 40%">
+            <figcaption data-en="In the chemistry lab">Au laboratoire de chimie</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/labo-reflux.webp" alt="Montage de chauffage à reflux : ballon dans un chauffe-ballon surmonté d'un réfrigérant" data-en-alt="Reflux set-up: a flask in a heating mantle topped by a condenser" width="1200" height="1600" loading="lazy" decoding="async">
+            <figcaption data-en="Heating under reflux">Chauffage à reflux</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/labo-extraction.webp" alt="Ampoule à décanter sur son support, au-dessus d'une éprouvette graduée" data-en-alt="Separating funnel on its stand, above a graduated cylinder" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:50% 30%">
+            <figcaption data-en="Separating-funnel extraction">Extraction à l'ampoule à décanter</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/labo-filtration.webp" alt="Filtration : entonnoir garni d'un filtre orange au-dessus d'un tube à essai" data-en-alt="Filtration: a funnel lined with an orange-stained filter above a test tube" width="1200" height="1600" loading="lazy" decoding="async">
+            <figcaption data-en="Filtration">Filtration</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section" aria-labelledby="ateliers-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Science outreach · SPA &amp;amp; MASS">✦ Médiation · SPA &amp; MASS</p>
+            <h2 class="s-title" id="ateliers-title" data-en="Saturday&lt;span class=&quot;script&quot;&gt;workshops&lt;/span&gt;">Ateliers<span class="script">du samedi</span></h2>
+          </div>
+          <p class="s-intro" data-en="Four Saturdays, ten students, with Sciences Physiques et Avenir and the Malagasy Astronomical Society (MASS): building your own solar system from sticks, string and paper, then wiring circuits and measuring with a multimeter.">Quatre samedis, dix élèves, avec Sciences Physiques et Avenir et la Malagasy Astronomical Society (MASS) : fabriquer son propre système solaire avec des bâtons, de la ficelle et du papier, puis monter des circuits et mesurer au multimètre.</p>
+        </header>
+        <div class="gallery land">
+          <figure class="rv">
+            <img src="Assets/atelier-aide.webp" alt="Niriantsoa aide une petite fille à assembler son système solaire en papier (visages des enfants floutés)" data-en-alt="Niriantsoa helps a little girl assemble her paper solar system (children’s faces blurred)" width="1600" height="1200" loading="lazy" decoding="async">
+            <figcaption data-en="Building it together">Construire ensemble</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/atelier-systeme-solaire.webp" alt="Mobile « Le système solaire » : planètes en papier colorié suspendues à un bâton par des ficelles" data-en-alt="“Le système solaire” mobile: coloured paper planets hanging from a stick on strings" width="1600" height="1200" loading="lazy" decoding="async">
+            <figcaption data-en="A solar system made of sticks and string">Un système solaire en bâton et ficelle</figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="Assets/atelier-groupe.webp" alt="Les enfants de l'atelier montrent fièrement leur système solaire, devant un tableau « Great achievement! » (visages floutés)" data-en-alt="The workshop children proudly show their solar systems in front of a “Great achievement!” board (faces blurred)" width="1600" height="1200" loading="lazy" decoding="async">
+            <figcaption data-en="“Great achievement!”">« Great achievement! »</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section red" id="projets" aria-labelledby="projets-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ In practice">✦ En pratique</p>
+            <h2 class="s-title" id="projets-title" data-en="Related&lt;span class=&quot;script&quot;&gt;projects&lt;/span&gt;">Projets<span class="script">liés</span></h2>
+          </div>
+        </header>
+        <div class="projects">
+          <article class="proj rv">
+            <p class="proj-meta" data-en="Education · Web app">Éducation · Application web</p>
+            <h3>Fonctio</h3>
+            <p data-en="A function-study platform: type f(x) and get the full study (domain, derivative, variations, tangent, graph, antiderivative, area) with step-by-step reasoning.">Plateforme d'étude de fonctions : on saisit f(x) et on obtient l'étude complète (domaine, dérivée, variations, tangente, courbe, primitive, aire), avec le raisonnement détaillé.</p>
+            <ul class="stack"><li>React</li><li>TypeScript</li><li>FastAPI</li><li>SymPy</li></ul>
+            <div class="proj-links"><a href="https://github.com/niriantsoa1304/fonctio-function-analyzer" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.3a2.9 2.9 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.3 5.5 2.6 5.5 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9c0 4.7 2.8 5.7 5.5 6a2.9 2.9 0 0 0-.8 2.2V22"/></svg> Code</a></div>
+          </article>
+          <article class="proj rv">
+            <p class="proj-meta" data-en="Science outreach">Médiation scientifique</p>
+            <h3>Sciences Physiques et Avenir</h3>
+            <p data-en="An interactive talk on solar physics for 30 young scouts, and Saturday workshops (4 weeks, 10 students) with the Malagasy Astronomical Society (MASS), using local, low-cost materials.">Présentation interactive sur la physique du Soleil pour 30 jeunes scouts, et ateliers du samedi (4 semaines, 10 élèves) avec la Malagasy Astronomical Society (MASS), à partir de matériel local et peu coûteux.</p>
+            <ul class="stack"><li data-en="Outreach">Vulgarisation</li><li data-en="Workshops">Ateliers</li><li data-en="Physics">Physique</li></ul>
+            <div class="proj-links"><span class="note" data-en="Sciences Physiques et Avenir association">Association Sciences Physiques et Avenir</span></div>
+          </article>
+          <article class="proj rv">
+            <p class="proj-meta" data-en="Research · Aug – Sept 2025">Recherche · Août – sept. 2025</p>
+            <h3 data-en="Pan-STARRS asteroid search campaign">Campagne d'astéroïdes Pan-STARRS</h3>
+            <p data-en="Led a team of 4: identified 2 provisional asteroid candidates in Pan-STARRS images. Work recognised by the Pan-STARRS Institute (University of Hawaii), supported by NASA.">Cheffe d'une équipe de 4 : 2 astéroïdes candidats provisoires identifiés sur des images Pan-STARRS. Travail reconnu par le Pan-STARRS Institute (Université d'Hawaï), soutenu par la NASA.</p>
+            <ul class="stack"><li>Astrometrica</li><li data-en="FITS images">Images FITS</li><li data-en="Astrometry">Astrométrie</li></ul>
+            <div class="proj-links"><a href="astronomie.html" data-en="Astronomy chapter →">Chapitre astronomie →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-section" aria-labelledby="suite-title">
+      <div class="wrap">
+        <header class="s-head rv">
+          <div>
+            <p class="s-kicker" data-en="✦ Keep reading">✦ Poursuivre</p>
+            <h2 class="s-title" id="suite-title" data-en="Other&lt;span class=&quot;script&quot;&gt;chapters&lt;/span&gt;">Autres<span class="script">chapitres</span></h2>
+          </div>
+        </header>
+        <div class="pager">
+          <a href="astronomie.html" class="rv">
+            <span class="thumb"><img src="Assets/astronomie.webp" alt="" loading="lazy" style="object-position:45% 30%"></span>
+            <span><small data-en="Chapter II">Chapitre II</small><strong data-en="Astronomy">Astronomie</strong><em data-en="reading the stars">lire dans les étoiles</em></span>
+          </a>
+          <a href="entrepreneuriat.html" class="rv">
+            <span class="thumb"><img src="Assets/regulus-studio.webp" alt="" loading="lazy" style="object-position:40% 100%"></span>
+            <span><small data-en="Chapter III">Chapitre III</small><strong data-en="Entrepreneurship">Entrepreneuriat</strong><em data-en="creating and innovating">créer et innover</em></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section class="d-contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title" class="rv" data-en="A workshop, a talk, a class? Let’s talk">Un atelier, une conférence, un cours ? Parlons-en</h2>
+        <div class="d-actions rv">
+          <a class="btn solid" href="mailto:niriantsoa1304@gmail.com?subject=Enseignement%20%2F%20m%C3%A9diation" data-en-href="mailto:niriantsoa1304@gmail.com?subject=Teaching%20%2F%20outreach">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+            <span data-en="Write to me">M'écrire</span></a>
+          <a class="btn" href="https://wa.me/261347418591" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10H9l-5 4v-14Z"/></svg>
+            WhatsApp</a>
+        </div>
+      </div>
+    </section>
+    <div class="footer-band">
+      <div class="wrap">
+        <span class="rule" aria-hidden="true"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z"/></svg>
+        <p data-en="Learn. Teach. Build.">Apprendre. Enseigner. Entreprendre.</p>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z"/></svg><span class="rule" aria-hidden="true"></span>
+      </div>
+    </div>
+  </footer>
+  <!-- Appel à l'action flottant : WhatsApp ou e-mail -->
+  <div class="cta" id="cta">
+    <ul class="cta-menu" id="cta-menu" aria-label="Me contacter" data-en-aria="Contact me">
+      <li><a class="wa" data-en-href="https://wa.me/261347418591?text=Hello%20Niriantsoa%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20with%20you." href="https://wa.me/261347418591?text=Bonjour%20Niriantsoa%2C%20j%27ai%20d%C3%A9couvert%20votre%20portfolio%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></span>
+        <span>WhatsApp<small data-en="Quick reply">Réponse rapide</small></span></a></li>
+      <li><a class="ml" data-en-href="mailto:niriantsoa1304@gmail.com?subject=Getting%20in%20touch%20via%20your%20portfolio" href="mailto:niriantsoa1304@gmail.com?subject=Prise%20de%20contact%20depuis%20votre%20portfolio">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
+        <span>E-mail<small>niriantsoa1304@gmail.com</small></span></a></li>
+    </ul>
+    <button class="cta-main" type="button" aria-expanded="false" aria-controls="cta-menu">
+      <svg class="chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10H9l-5 4v-14Z"/><path d="M8 9.5h8M8 12.5h5"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span data-en="Let’s talk">Discutons</span>
+    </button>
+  </div>
+  <!-- Musique d'ambiance : coupée par défaut, le visiteur l'active ou la coupe quand il veut -->
+  <audio id="bg-music" src="Assets/musique.mp3" loop preload="none"></audio>
+  <button class="music" type="button" aria-pressed="false" aria-label="Activer la musique" hidden>
+    <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+    <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+    <span class="tip">Activer la musique</span>
+  </button>
+  <script src="pages.js"></script>
+  <script src="widgets.js"></script>
+</body>
+</html>

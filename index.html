@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="widgets.css">
   <style>
     /* ——— Palette Moulin Rouge ——— */
     :root {
@@ -112,12 +113,12 @@
     .nav ul { display: flex; gap: 50px; list-style: none; margin: 0; padding: 0; }
     .nav ul a, .btn-outline-sm { white-space: nowrap; }
     .nav ul a {
-      font-size: 12.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+      font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
       color: var(--text-muted); transition: color .25s;
     }
     .nav ul a:hover { color: var(--champagne); }
     .btn-outline-sm {
-      font-size: 12.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+      font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
       padding: 12px 24px; border: 1px solid var(--gold); border-radius: 6px;
       color: var(--champagne); transition: background .25s, color .25s;
     }
@@ -161,7 +162,7 @@
     .btn-primary {
       display: inline-flex; align-items: center; gap: 22px;
       padding: 18px 40px; border: 1px solid var(--gold); border-radius: 999px;
-      font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+      font-size: 14px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
       transition: background .3s, color .3s;
     }
     .btn-primary:hover { background: var(--gold); color: var(--noir); }
@@ -170,7 +171,7 @@
     .hero .btn-primary:hover { background: var(--champagne); border-color: var(--champagne); }
     .btn-link {
       display: inline-flex; align-items: center; gap: 12px;
-      font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+      font-size: 14px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
       color: var(--text-muted); transition: color .25s;
     }
     .btn-link:hover { color: var(--champagne); }
@@ -245,7 +246,7 @@
       width: 1px; background: var(--line);
     }
     .info-label {
-      font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+      font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
       color: var(--gold); margin: 0 0 12px;
     }
     .info-value { font-family: var(--serif); font-size: 22px; line-height: 1.25; margin: 0; color: var(--champagne); }
@@ -349,7 +350,7 @@
     .about-essence { margin: 40px 0 0; width: 100%; max-width: 58ch; }
     .about-essence figcaption {
       display: flex; align-items: center; gap: 16px;
-      font-size: 12.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+      font-size: 13.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
       color: var(--gold);
     }
     /* filets dorés de part et d'autre du titre */
@@ -362,7 +363,7 @@
       font-size: clamp(21px, 1.9vw, 28px); color: var(--sand);
     }
     .about-quote cite {
-      font-style: normal; font-family: var(--sans); font-size: 12.5px;
+      font-style: normal; font-family: var(--sans); font-size: 13.5px;
       letter-spacing: .16em; text-transform: uppercase; color: var(--gold);
       display: block; margin-top: 8px; white-space: nowrap;
     }
@@ -413,7 +414,7 @@
     }
     .path-eyebrow {
       margin: 0 0 6px;
-      font-size: 12px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase;
+      font-size: 13px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase;
       color: var(--gold);
     }
     .path-title {
@@ -486,7 +487,7 @@
     .path-card.featured .path-icon { background: #5d0a12; }
     .photo-credit {
       margin: 18px 0 0; text-align: center;
-      font-size: 11px; letter-spacing: .06em; color: rgba(242, 226, 198, .45);
+      font-size: 12.5px; letter-spacing: .04em; color: rgba(242, 226, 198, .55);
     }
     .photo-credit a { text-decoration: underline; text-underline-offset: 2px; }
     .path-icon svg { width: 32px; height: 32px; }
@@ -616,7 +617,7 @@
     .proj-tools { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
     .proj-filters { display: flex; gap: 8px; flex-wrap: wrap; }
     .proj-filters button {
-      font: 500 11.5px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+      font: 500 12.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase;
       color: var(--sand); background: none; cursor: pointer;
       padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px;
       transition: background .25s, color .25s, border-color .25s;
@@ -667,7 +668,7 @@
     .proj-cover .big {
       font-family: var(--serif); font-size: 64px; line-height: 1; color: var(--champagne); text-align: center;
     }
-    .proj-cover .big small { display: block; margin-top: 6px; font: 500 10.5px/1.4 var(--sans); letter-spacing: .18em; color: var(--gold); }
+    .proj-cover .big small { display: block; margin-top: 6px; font: 500 12px/1.4 var(--sans); letter-spacing: .18em; color: var(--gold); }
     .proj-cover.stars {
       background:
         radial-gradient(1px 1px at 18% 30%, var(--sand), transparent), radial-gradient(1px 1px at 72% 22%, var(--sand), transparent),
@@ -676,22 +677,22 @@
         radial-gradient(ellipse 80% 80% at 50% 35%, #3d060c 0%, #0d0103 100%);
     }
     .proj-body { display: flex; flex-direction: column; flex: 1; padding: 18px 16px 0; }
-    .proj-meta { margin: 0 0 8px; font: 500 10.5px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    .proj-meta { margin: 0 0 8px; font: 500 12px/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
     .proj-card h3 { margin: 0 0 8px; font-family: var(--serif); font-weight: 500; font-size: 25px; line-height: 1.15; color: var(--champagne); }
-    .proj-text { margin: 0 0 14px; font-size: 14.5px; font-weight: 300; line-height: 1.6; color: rgba(242, 226, 198, .88); }
+    .proj-text { margin: 0 0 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: rgba(242, 226, 198, .88); }
     .proj-stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; padding: 0; list-style: none; }
-    .proj-stack li { font: 500 10.5px/1 var(--sans); letter-spacing: .06em; color: var(--sand);
+    .proj-stack li { font: 500 12px/1 var(--sans); letter-spacing: .04em; color: var(--sand);
       padding: 6px 9px; border: 1px solid rgba(200, 161, 94, .3); border-radius: 999px; }
     .proj-links { margin-top: auto; display: flex; gap: 18px; flex-wrap: wrap; }
     .proj-links a {
       display: inline-flex; align-items: center; gap: 8px;
-      font: 500 11.5px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+      font: 500 12.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase;
       color: var(--champagne); padding-bottom: 5px; border-bottom: 1px solid var(--gold); transition: color .25s;
     }
     .proj-links a:hover { color: var(--gold); }
     .proj-links svg { width: 14px; height: 14px; }
-    .proj-links .note { font: 400 12.5px/1.4 var(--sans); color: var(--sand); font-style: italic; }
-    .proj-hint { margin: 6px 0 0; text-align: center; font-size: 12px; letter-spacing: .08em; color: rgba(242, 226, 198, .5); }
+    .proj-links .note { font: 400 13.5px/1.4 var(--sans); color: var(--sand); font-style: italic; }
+    .proj-hint { margin: 6px 0 0; text-align: center; font-size: 13px; letter-spacing: .06em; color: rgba(242, 226, 198, .6); }
 
     @media (min-width: 901px) {
       .projects { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
@@ -700,11 +701,16 @@
     }
     @media (min-width: 901px) and (max-height: 920px) {
       .proj-cover { aspect-ratio: 16 / 7.5; }
-      .proj-text { line-height: 1.45; margin-bottom: 10px; font-size: 13.5px; }
+      .proj-text { line-height: 1.45; margin-bottom: 10px; font-size: 14px; }
       .proj-card h3 { font-size: 22px; }
       .proj-body { padding-top: 14px; }
       .proj-hint { display: none; }
       .proj-stack { margin-bottom: 12px; }
+    }
+    /* petits portables (≈ 1024 px) : cartes étroites, donc plus de lignes ; on compacte */
+    @media (min-width: 901px) and (max-width: 1100px) and (max-height: 920px) {
+      .proj-cover { aspect-ratio: 16 / 6; }
+      .proj-text { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
     }
     @media (min-width: 901px) and (max-height: 700px) {
       .proj-cover { aspect-ratio: 16 / 6; }
@@ -801,7 +807,7 @@
     }
     .footer-quote figcaption {
       margin-top: 18px; padding-bottom: 14px; text-align: center;
-      font-size: 11.5px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+      font-size: 12.5px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
       color: var(--gold);
       border-bottom: 1px solid var(--gold);
     }
@@ -853,14 +859,14 @@
       }
       .footer-title { margin-top: 36px; }
       .contact-list a, .contact-list span.item { font-size: 17px; gap: 14px; }
-      .footer-band p { font-size: 12px; letter-spacing: .2em; }
+      .footer-band p { font-size: 13px; letter-spacing: .2em; }
       .footer-band .wrap { gap: 10px; }
     }
     /* le slogan (plus long en français) peut passer sur deux lignes plutôt que déborder */
     @media (max-width: 480px) {
       .footer-band .rule { display: none; }
       .footer-band .wrap { justify-content: center; }
-      .footer-band p { white-space: normal; text-align: center; font-size: 11px; letter-spacing: .14em; line-height: 1.6; }
+      .footer-band p { white-space: normal; text-align: center; font-size: 12.5px; letter-spacing: .12em; line-height: 1.6; }
     }
 
     /* ——— Menu mobile (3 barres) ——— */
@@ -919,41 +925,6 @@
       .footer { scroll-snap-align: end; }
     }
 
-    /* ——— Musique d'ambiance (bouton on/off) ——— */
-    .music {
-      position: fixed; right: 22px; bottom: 22px; z-index: 40;
-      width: 52px; height: 52px; border-radius: 50%; cursor: pointer;
-      display: grid; place-items: center;
-      background: rgba(13, 1, 3, .82); color: var(--gold);
-      border: 1px solid var(--gold);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
-      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-      transition: background .25s, color .25s, transform .25s, opacity .3s;
-    }
-    .music:hover { background: var(--gold); color: var(--noir); transform: scale(1.06); }
-    .music:focus-visible { outline: 2px solid var(--champagne); outline-offset: 3px; }
-    .music[hidden] { display: none; }
-    /* icône lecture quand la musique est coupée, pause quand elle joue */
-    .music svg { position: absolute; width: 20px; height: 20px; transition: opacity .25s, transform .25s; }
-    .music .ico-play { transform: translateX(1px); }
-    .music .ico-pause { opacity: 0; transform: scale(.6); }
-    .music.playing .ico-play { opacity: 0; transform: scale(.6); }
-    .music.playing .ico-pause { opacity: 1; transform: none; }
-    /* léger halo qui pulse pendant la lecture */
-    .music.playing { animation: pulse 2.4s ease-in-out infinite; }
-    @keyframes pulse { 0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 0 0 rgba(200,161,94,.45); }
-                       50% { box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 0 8px rgba(200,161,94,0); } }
-    .music .tip {
-      position: absolute; right: calc(100% + 12px); top: 50%; transform: translateY(-50%);
-      white-space: nowrap; padding: 7px 12px; border-radius: 4px;
-      font: 500 11px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase;
-      background: var(--gold); color: var(--noir);
-      opacity: 0; pointer-events: none; transition: opacity .25s;
-    }
-    .music:hover .tip, .music:focus-visible .tip { opacity: 1; }
-    .nav-open .music { opacity: 0; pointer-events: none; }
-    @media (prefers-reduced-motion: reduce) { .music.playing { animation: none; } }
-    @media (max-width: 560px) { .music { right: 14px; bottom: 14px; width: 46px; height: 46px; } .music .tip { display: none; } }
 
     /* ================= ANIMATIONS ================= */
     :root { --ease: cubic-bezier(.16, 1, .3, 1); --ease-io: cubic-bezier(.77, 0, .18, 1); }
@@ -1084,63 +1055,10 @@
     .hero .badge      { translate: calc(var(--px, 0) * 22px)  calc(var(--py, 0) * 14px); }
     .hero .glow       { translate: calc(var(--px, 0) * -30px) calc(var(--py, 0) * -20px); }
 
-    /* ——— Bouton d'appel à l'action flottant « Discutons » ——— */
-    .cta {
-      position: fixed; right: 22px; bottom: 22px; z-index: 41;
-      display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
-      transition: opacity .4s ease, transform .5s var(--ease, ease);
-    }
-    .cta.off { opacity: 0; transform: translateY(20px); pointer-events: none; }
-    .cta-main {
-      display: inline-flex; align-items: center; gap: 12px; height: 52px; padding: 0 22px 0 18px;
-      border-radius: 999px; border: 1px solid var(--gold); cursor: pointer;
-      background: var(--gold); color: var(--noir);
-      font: 600 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase;
-      box-shadow: 0 12px 34px rgba(0,0,0,.5);
-      transition: background .25s, transform .25s;
-    }
-    .cta-main:hover { background: var(--champagne); transform: translateY(-2px); }
-    .cta-main:focus-visible { outline: 2px solid var(--champagne); outline-offset: 3px; }
-    .cta-main svg { width: 20px; height: 20px; }
-    .cta-main .x { display: none; }
-    .cta.open .cta-main .chat { display: none; }
-    .cta.open .cta-main .x { display: block; }
-    .cta-menu {
-      display: flex; flex-direction: column; gap: 8px; list-style: none; margin: 0; padding: 0;
-      opacity: 0; transform: translateY(12px) scale(.96); transform-origin: bottom right; pointer-events: none;
-      transition: opacity .3s ease, transform .4s var(--ease, ease);
-    }
-    .cta.open .cta-menu { opacity: 1; transform: none; pointer-events: auto; }
-    .cta-menu a {
-      display: flex; align-items: center; gap: 12px; padding: 12px 18px 12px 12px;
-      border-radius: 999px; border: 1px solid var(--line);
-      background: rgba(13, 1, 3, .92); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: var(--champagne);
-      font: 500 13px/1.2 var(--sans); letter-spacing: .04em; white-space: nowrap;
-      box-shadow: 0 10px 30px rgba(0,0,0,.45);
-      transition: border-color .25s, background .25s;
-    }
-    .cta-menu a:hover { border-color: var(--gold); background: #1d0306; }
-    .cta-menu .ic { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; flex: none; }
-    .cta-menu .ic svg { width: 18px; height: 18px; }
-    .cta-menu .wa .ic { background: #25d366; color: #fff; }
-    .cta-menu .ml .ic { background: var(--gold); color: var(--noir); }
-    .cta-menu small { display: block; font-size: 11px; color: var(--sand); letter-spacing: .02em; }
-    /* bouton musique tout en bas à droite (visible partout, hero compris) ; « Discutons » juste au-dessus */
-    .cta { bottom: calc(22px + 52px + 12px); }
-    .nav-open .cta { opacity: 0; pointer-events: none; }
-    @media (max-width: 560px) {
-      .cta { right: 14px; bottom: calc(14px + 46px + 10px); }
-      .cta-main { height: 46px; padding: 0 18px 0 15px; font-size: 11px; }
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      .cta:not(.off):not(.open) .cta-main { animation: ctaPing 3.2s ease-in-out 1.2s 2; }
-      @keyframes ctaPing { 0%, 70%, 100% { box-shadow: 0 12px 34px rgba(0,0,0,.5), 0 0 0 0 rgba(200,161,94,.55); }
-                           85% { box-shadow: 0 12px 34px rgba(0,0,0,.5), 0 0 0 12px rgba(200,161,94,0); } }
-    }
 
     /* ——— Sélecteur de langue ——— */
     html.i18n-pending body { visibility: hidden; }
-    .lang { display: flex; align-items: center; gap: 6px; font: 500 11.5px/1 var(--sans); letter-spacing: .12em; color: rgba(242,226,198,.4); }
+    .lang { display: flex; align-items: center; gap: 6px; font: 500 12.5px/1 var(--sans); letter-spacing: .12em; color: rgba(242,226,198,.4); }
     .lang button {
       background: none; border: 0; cursor: pointer; padding: 6px 2px;
       font: inherit; letter-spacing: inherit; color: rgba(242,226,198,.55);
@@ -1167,7 +1085,7 @@
       .logo { font-size: 21px; }
       .nav-right { gap: 22px; }
       .nav ul { gap: 20px; }
-      .nav ul a, .btn-outline-sm { font-size: 11.5px; letter-spacing: .1em; }
+      .nav ul a, .btn-outline-sm { font-size: 12px; letter-spacing: .09em; }
       .btn-outline-sm { padding: 11px 16px; }
     }
     @media (max-width: 900px) {
@@ -1189,13 +1107,13 @@
       .nav { padding-block: 20px; gap: 12px; }
       .logo { font-size: 18px; }
       .logo span { display: block; }
-      .btn-outline-sm { padding: 10px 16px; font-size: 10.5px; }
-      .eyebrow { font-size: 11.5px; letter-spacing: .12em; }
+      .btn-outline-sm { padding: 10px 16px; font-size: 12px; }
+      .eyebrow { font-size: 12.5px; letter-spacing: .1em; }
       /* « FROM MADAGASCAR » ≈ 9,7 × la taille de police : le titre tient toujours sur la largeur */
       h1 { font-size: clamp(26px, calc((100vw - 32px) / 10), 40px); }
       .lead { font-size: 17px; }
-      .btn-primary, .btn-link { font-size: 13px; }
-      .info-label { font-size: 12px; }
+      .btn-primary, .btn-link { font-size: 13.5px; }
+      .info-label { font-size: 12.5px; }
       .eyebrow em { display: none; }
       .btn-primary { padding: 16px 28px; }
       .badge { width: 124px; height: 124px; right: -4%; bottom: auto; top: 24%; }
@@ -1217,14 +1135,11 @@
       .footer-quote { padding: 16px 26px 0; }
       .footer-quote blockquote { font-size: 20px; }
       .footer-quote .q { font-size: 48px; }
-      .music .tip { display: none; }
     }
     /* écrans tactiles : pas d'effet « soulevé » qui reste bloqué après un tap */
     @media (hover: none) {
       .path-card:hover, .proj-card:hover { transform: none; }
       .path-card:hover .path-media img { transform: none; }
-      .music:hover { transform: none; }
-      .cta-main:hover { transform: none; }
     }
   </style>
 </head>
@@ -1395,7 +1310,7 @@
           <p class="path-tag" data-en="passing on knowledge">transmettre le savoir</p>
           <hr>
           <p class="path-text" data-en="Physics and chemistry teacher with a passion for science outreach: making science lively and accessible.">Professeure de physique-chimie et passionnée de médiation scientifique : rendre la science vivante et accessible.</p>
-          <a class="btn-primary" href="#enseignement"><span data-en="Learn more">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <a class="btn-primary" href="enseignement.html"><span data-en="Learn more">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
           </div>
         </article>
 
@@ -1410,7 +1325,7 @@
           <p class="path-tag" data-en="reading the stars">lire dans les étoiles</p>
           <hr>
           <p class="path-text" data-en="Master’s in astronomy and astrophysics, DARA training, Python projects and asteroid research.">Master 2 en astronomie et astrophysique, formation DARA, projets Python et recherche d'astéroïdes.</p>
-          <a class="btn-primary" href="#astronomie"><span data-en="Learn more">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <a class="btn-primary" href="astronomie.html"><span data-en="Learn more">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
           </div>
         </article>
 
@@ -1425,7 +1340,7 @@
           <p class="path-tag" data-en="creating and innovating">créer et innover</p>
           <hr>
           <p class="path-text" data-en="Founder of &lt;a class=&quot;path-link&quot; href=&quot;https://regulus-studio.tech/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Regulus Studio&lt;/a&gt;, a bespoke web agency, and of projects blending science, education and tech.">Fondatrice de <a class="path-link" href="https://regulus-studio.tech/" target="_blank" rel="noopener">Regulus Studio</a>, agence web sur mesure, et de projets mêlant science, éducation et tech.</p>
-          <a class="btn-primary" href="#entrepreneuriat"><span data-en="Learn more">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <a class="btn-primary" href="entrepreneuriat.html"><span data-en="Learn more">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
           </div>
         </article>
       </div>
@@ -1551,7 +1466,7 @@
           <div class="proj-body">
             <p class="proj-meta" data-en="Science outreach">Médiation scientifique</p>
             <h3>Sciences Physiques et Avenir</h3>
-            <p class="proj-text" data-en="An interactive talk on solar physics for 30 young scouts, and Saturday workshops (4 weeks, 10 students) using local, low-cost materials.">Présentation interactive sur la physique du Soleil pour 30 jeunes scouts, et ateliers du samedi (4 semaines, 10 élèves) avec du matériel local et peu coûteux.</p>
+            <p class="proj-text" data-en="An interactive talk on solar physics for 30 young scouts, and Saturday workshops (4 weeks, 10 students) with the Malagasy Astronomical Society (MASS), using local, low-cost materials.">Présentation interactive sur la physique du Soleil pour 30 jeunes scouts, et ateliers du samedi (4 semaines, 10 élèves) avec la Malagasy Astronomical Society (MASS), à partir de matériel local et peu coûteux.</p>
             <ul class="proj-stack"><li data-en="Outreach">Vulgarisation</li><li data-en="Workshops">Ateliers</li><li data-en="Physics">Physique</li></ul>
             <div class="proj-links"><span class="note" data-en="Sciences Physiques et Avenir association">Association Sciences Physiques et Avenir</span></div>
           </div>
@@ -1561,7 +1476,7 @@
           <div class="proj-body">
             <p class="proj-meta" data-en="Conferences · 2026">Conférences · 2026</p>
             <h3>DARA ANM & TART</h3>
-            <p class="proj-text" data-en="Participant in the DARA programme’s Annual Network Meeting (South Africa, March 2026) and the TART conference (Madagascar, 2026).">Participante à l'Annual Network Meeting du programme DARA (Afrique du Sud, mars 2026) et à la conférence TART (Madagascar, 2026).</p>
+            <p class="proj-text" data-en="Participant in the DARA programme’s Annual Network Meeting (South Africa, March 2026) and the TART Madagascar workshop (June 2026), which installed the country’s first TART radio telescope.">Participante à l'Annual Network Meeting du programme DARA (Afrique du Sud, mars 2026) et à l'atelier TART Madagascar (juin 2026), qui a installé le premier radiotélescope TART du pays.</p>
             <ul class="proj-stack"><li data-en="Radio astronomy">Radioastronomie</li><li data-en="DARA network">Réseau DARA</li></ul>
             <div class="proj-links"><span class="note" data-en="South Africa · Madagascar">Afrique du Sud · Madagascar</span></div>
           </div>
@@ -1610,7 +1525,7 @@
 
 
   <!-- Appel à l'action flottant : WhatsApp ou e-mail -->
-  <div class="cta off" id="cta">
+  <div class="cta" id="cta">
     <ul class="cta-menu" id="cta-menu" aria-label="Me contacter" data-en-aria="Contact me">
       <li><a class="wa" data-en-href="https://wa.me/261347418591?text=Hello%20Niriantsoa%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20with%20you." href="https://wa.me/261347418591?text=Bonjour%20Niriantsoa%2C%20j%27ai%20d%C3%A9couvert%20votre%20portfolio%20et%20j%27aimerais%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener">
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></span>
@@ -1738,49 +1653,6 @@
       addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
     })();
 
-    // Musique d'ambiance
-    (() => {
-      const a = document.getElementById('bg-music'), btn = document.querySelector('.music');
-      if (!a || !btn) return;
-      const TARGET = .35, KEY = 'musique';
-      let fade;
-      const tip = btn.querySelector('.tip');
-      const ui = on => {
-        btn.classList.toggle('playing', on);
-        btn.setAttribute('aria-pressed', on);
-        const en = document.documentElement.lang === 'en';
-        const t = on ? (en ? 'Pause music' : 'Couper la musique') : (en ? 'Play music' : 'Activer la musique');
-        btn.setAttribute('aria-label', t); tip.textContent = t;
-      };
-      ui(false);
-      document.addEventListener('langchange', () => ui(btn.classList.contains('playing')));
-      const ramp = (to, done) => {
-        clearInterval(fade);
-        fade = setInterval(() => {
-          const v = a.volume + (to > a.volume ? .03 : -.03);
-          if ((to > a.volume && v >= to) || (to <= a.volume && v <= to)) { a.volume = to; clearInterval(fade); done && done(); }
-          else a.volume = Math.max(0, Math.min(1, v));
-        }, 40);
-      };
-      const play = () => { a.volume = 0; a.play().then(() => { ui(true); ramp(TARGET); }).catch(() => ui(false)); };
-      const stop = () => { ui(false); ramp(0, () => a.pause()); };
-      btn.addEventListener('click', () => {
-        const on = a.paused || btn.getAttribute('aria-pressed') === 'false';
-        try { localStorage.setItem(KEY, on ? 'on' : 'off'); } catch (e) {}
-        on ? play() : stop();
-      });
-      // le bouton n'apparaît que si le fichier existe
-      a.addEventListener('error', () => { btn.hidden = true; });
-      // la musique ne se télécharge qu'au premier clic (rien n'est chargé à l'arrivée sur la page)
-      btn.hidden = false;
-      // si le visiteur l'avait activée, on relance au premier clic ou touche (les navigateurs bloquent le son automatique)
-      let pref = null; try { pref = localStorage.getItem(KEY); } catch (e) {}
-      if (pref === 'on') {
-        const resume = e => { if (e.target.closest && e.target.closest('.music')) return; play(); };
-        addEventListener('pointerdown', resume, { once: true });
-        addEventListener('keydown', resume, { once: true });
-      }
-    })();
 
     // ===== Animations =====
     // 1) Rideau d'ouverture
@@ -1862,21 +1734,6 @@
       start();
     })();
 
-    // CTA flottant : visible partout (hero compris), masqué au footer (les contacts y sont déjà)
-    (() => {
-      const cta = document.getElementById('cta'); if (!cta) return;
-      const btn = cta.querySelector('.cta-main'), foot = document.getElementById('contact');
-      const set = o => { cta.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); };
-      btn.addEventListener('click', e => { e.stopPropagation(); set(!cta.classList.contains('open')); });
-      document.addEventListener('click', e => { if (!cta.contains(e.target)) set(false); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
-      cta.querySelectorAll('.cta-menu a').forEach(a => a.addEventListener('click', () => set(false)));
-      const upd = () => {
-        const off = foot.getBoundingClientRect().top < innerHeight * 0.75;
-        cta.classList.toggle('off', off); if (off) set(false);
-      };
-      addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
-    })();
 
     // Menu mobile (3 barres)
     (() => {
@@ -1973,5 +1830,6 @@
     window.addEventListener('resize', sizeSep);
 
   </script>
+  <script src="widgets.js"></script>
 </body>
 </html>
