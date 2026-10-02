@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Allow: /index.html
+Allow: /astronomie.html
+Allow: /entrepreneuriat.html
+Allow: /enseignement.html
+
+Sitemap: https://niriantsoa.me/sitemap.xml
