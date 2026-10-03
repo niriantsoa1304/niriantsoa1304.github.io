@@ -1165,3 +1165,9 @@ html[lang="en"] .d-hero-main:has(.portrait) .d-title { font-size: clamp(44px, mi
    (glissements, rotations, zooms) sont coupées à la largeur de l'écran.
    « clip » ne crée pas de zone de défilement (le défilement de la page reste normal). */
 .d-section, body > footer, main { overflow-x: clip; }
+/* Réalisations (Entrepreneuriat) : peu de cartes → largeur limitée et centrées */
+.biz .projects { grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 420px)); justify-content: center; }
+@media (min-width: 901px) and (min-height: 560px) {
+  .biz .projects { grid-auto-flow: row; grid-auto-columns: auto; }
+  .biz .projects .proj { min-height: clamp(300px, 46vh, 440px); }
+}
